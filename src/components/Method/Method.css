@@ -1,0 +1,95 @@
+/* ── The Forky Method ────────────────────────────────────────── */
+.method {
+  position: relative;
+  z-index: 1;
+  padding: 104px 0;
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,0.022) 50%, transparent);
+}
+
+.method-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 64px;
+}
+
+.method-flow::before {
+  content: '';
+  position: absolute;
+  top: 35px; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, var(--cyan) 20%, var(--green) 80%, transparent 100%);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.method-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 18px;
+}
+
+.method-dot-wrap { position: relative; margin-bottom: 20px; }
+
+.method-dot {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.method-step:hover .method-dot {
+  border-color: var(--cyan);
+  box-shadow: 0 0 22px rgba(0,212,255,0.28);
+  transform: scale(1.1);
+}
+
+.method-step-num {
+  position: absolute;
+  top: -7px; right: -7px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #040D1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.method-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.method-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+}
+
+@media (max-width: 1024px) {
+  .method-flow::before { display: none; }
+  .method-flow { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+}
+
+@media (max-width: 640px) {
+  .method-flow { grid-template-columns: 1fr; }
+}

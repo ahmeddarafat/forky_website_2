@@ -1,0 +1,243 @@
+/* =============================================================
+   BASE — Custom properties, reset, utilities, buttons, animations
+============================================================= */
+
+/* ── Custom properties ─────────────────────────────────────── */
+:root {
+  --bg-base:       #040D1A;
+  --bg-surface:    #061322;
+  --bg-card:       #091628;
+  --bg-card-hover: #0C1C32;
+
+  --cyan:       #00D4FF;
+  --cyan-dim:   rgba(0, 212, 255, 0.12);
+  --cyan-glow:  rgba(0, 212, 255, 0.35);
+  --green:      #00FF9D;
+  --green-dim:  rgba(0, 255, 157, 0.1);
+  --green-glow: rgba(0, 255, 157, 0.28);
+
+  --text-primary:   #EDF4FF;
+  --text-secondary: #7A93B8;
+  --text-muted:     #3A4F6E;
+
+  --border:       rgba(0, 212, 255, 0.1);
+  --border-hover: rgba(0, 212, 255, 0.32);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --transition:  all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-glow: 0 0 28px rgba(0, 212, 255, 0.14);
+  --shadow-card: 0 4px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.15;
+}
+
+a   { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── Global background grid ─────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.022) 1px, transparent 1px);
+  background-size: 68px 68px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 80vh;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.055) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 5px 13px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.tag::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 7px var(--cyan);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.025em;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── Scroll animations ───────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+
+.fade-up.visible,
+.fade-left.visible,
+.fade-right.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.stagger > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s;     }
+.stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.09s;  }
+.stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.18s;  }
+.stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.27s;  }
+.stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.36s;  }
+.stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.45s;  }
+.stagger.visible > *:nth-child(7) { opacity:1; transform:none; transition-delay:0.54s;  }
+.stagger.visible > *:nth-child(8) { opacity:1; transform:none; transition-delay:0.63s;  }
+.stagger.visible > *:nth-child(9) { opacity:1; transform:none; transition-delay:0.72s;  }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #040D1A;
+  background: linear-gradient(135deg, var(--cyan) 0%, #00A8CC 100%);
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 0 22px rgba(0, 212, 255, 0.28);
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 38px rgba(0, 212, 255, 0.5);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hover);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+/* ── Keyframes ───────────────────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(0.82); }
+}
+
+/* ── Section z-index stack ───────────────────────────────────── */
+section, nav, footer { position: relative; z-index: 1; }
+
+/* ── Responsive base ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .container { padding: 0 18px; }
+}

@@ -1,0 +1,53 @@
+/* ── The Problem ─────────────────────────────────────────────── */
+.problem {
+  position: relative;
+  z-index: 1;
+  padding: 104px 0;
+}
+
+.problem-list { max-width: 760px; margin: 0 auto; }
+
+.problem-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 26px;
+  align-items: flex-start;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.problem-item:first-child { border-top: 1px solid var(--border); }
+.problem-item:hover { padding-left: 10px; }
+
+.problem-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: rgba(239, 68, 68, 0.22);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  padding-top: 2px;
+  transition: var(--transition);
+}
+
+.problem-item:hover .problem-num { color: rgba(239, 68, 68, 0.48); }
+
+.problem-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.problem-body p {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.72;
+}
+
+.problem-body em {
+  font-style: normal;
+  color: rgba(239, 68, 68, 0.75);
+  font-weight: 600;
+}

@@ -1,0 +1,99 @@
+/* ── Final CTA ───────────────────────────────────────────────── */
+.cta-section {
+  position: relative;
+  z-index: 1;
+  padding: 128px 0;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw; height: 65vh;
+  background: radial-gradient(ellipse,
+    rgba(0,212,255,0.085) 0%,
+    rgba(0,255,157,0.04) 40%,
+    transparent 70%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -44px; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 40px;
+  background: linear-gradient(180deg, transparent, var(--cyan));
+}
+
+.cta-inner h2 {
+  font-size: clamp(2rem, 4.5vw, 3.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.cta-inner h2 .hl {
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-inner p {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.75;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-actions .btn-primary  { font-size: 1.02rem; padding: 14px 32px; box-shadow: 0 0 42px rgba(0,212,255,0.32); }
+.cta-actions .btn-primary:hover { box-shadow: 0 0 65px rgba(0,212,255,0.55); }
+.cta-actions .btn-secondary { font-size: 1.02rem; padding: 13px 32px; }
+
+.cta-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.cta-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--green-dim);
+  border: 1px solid rgba(0,255,157,0.2);
+  font-size: 0.55rem;
+  color: var(--green);
+  flex-shrink: 0;
+}
