@@ -12,7 +12,7 @@ export default function Services() {
           <p>Forky unifies software development, performance marketing, and brand strategy under a single roof — so everything compounds.</p>
         </div>
 
-        <div className="sc-cards-grid">
+        <div className="services-cards">
           {services.map(({ title, desc, delay, iconSvg }) => (
             <div
               key={title}
@@ -36,5 +36,6 @@ export default function Services() {
 
       </div>
     </section>
+
   );
 }
