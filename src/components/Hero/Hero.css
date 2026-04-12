@@ -109,119 +109,142 @@
 
 .hero-visual {
   position: relative;
-  height: 500px;
+  height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-orb {
-  position: absolute;
-  width: 340px; height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, rgba(0,212,255,0.13) 0%, rgba(0,255,157,0.06) 45%, transparent 70%);
-  animation: orb-float 7s ease-in-out infinite;
-}
-
-@keyframes orb-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%       { transform: translateY(-18px) scale(1.04); }
-}
-
-.hero-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid;
-  animation: ring-spin linear infinite;
-}
-
-.hero-ring-1 { width:270px; height:270px; border-color: rgba(0,212,255,0.22); animation-duration:22s; }
-.hero-ring-2 { width:380px; height:380px; border-color: rgba(0,255,157,0.1);  animation-duration:34s; animation-direction:reverse; }
-.hero-ring-3 { width:470px; height:470px; border-color: rgba(0,212,255,0.055); animation-duration:48s; }
-
-@keyframes ring-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.ring-dot {
-  position: absolute;
-  top: -4px; left: 50%;
-  transform: translateX(-50%);
-  width: 8px; height: 8px;
-  border-radius: 50%;
-}
-
-.ring-1-wrap { position:absolute; width:270px; height:270px; border-radius:50%; animation: ring-spin 22s linear infinite; }
-.ring-2-wrap { position:absolute; width:380px; height:380px; border-radius:50%; animation: ring-spin 34s linear infinite reverse; }
-
-.float-card {
-  position: absolute;
-  background: rgba(9,22,40,0.88);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  box-shadow: var(--shadow-card);
-  transition: var(--transition);
-}
-
-.float-card:hover {
-  border-color: var(--border-hover);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5), var(--shadow-glow);
-}
-
-.float-card-1 { top:8%;  right:4%;  min-width:158px; animation: fc-float 7s ease-in-out infinite; }
-.float-card-2 { bottom:14%; left:0%; min-width:148px; animation: fc-float 9s ease-in-out infinite reverse; }
-.float-card-3 { top:44%; right:-2%; min-width:138px; animation: fc-float-mid 8.5s ease-in-out infinite 1s; }
-
-@keyframes fc-float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-14px); }
-}
-
-@keyframes fc-float-mid {
-  0%, 100% { transform: translateY(-50%); }
-  50%       { transform: translateY(calc(-50% - 12px)); }
-}
-
-.fc-label {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  margin-bottom: 5px;
-}
-
-.fc-val {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.18rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.fc-val.cyan  { color: var(--cyan); }
-.fc-val.green { color: var(--green); }
-
-.fc-sub {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-  margin-top: 4px;
-}
-
-.fc-trend {
+/* ── Chess Knight ───────────────────────────────────────── */
+.knight-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
-  color: var(--green);
-  font-weight: 600;
-  margin-top: 4px;
+  justify-content: center;
+  perspective: 1200px;
 }
 
-/* Entrance animations */
+/* Ambient glow orbs */
+.knight-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.knight-glow-1 {
+  width: 360px; height: 360px;
+  top: 50%; left: 50%;
+  margin: -180px 0 0 -180px;
+  background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 68%);
+  animation: k-glow 5s ease-in-out infinite;
+}
+
+.knight-glow-2 {
+  width: 210px; height: 210px;
+  top: 25%; left: 50%;
+  margin-left: -105px;
+  background: radial-gradient(circle, rgba(0,255,157,0.07) 0%, transparent 68%);
+  animation: k-glow 5s ease-in-out infinite 2.5s;
+}
+
+@keyframes k-glow {
+  0%,100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.15); }
+}
+
+/* 3D float container */
+.knight-3d {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: knight-float 5.5s ease-in-out infinite;
+}
+
+/* Moving light-sweep reflection */
+.knight-3d::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  border-radius: 12px;
+  background: linear-gradient(
+    118deg,
+    transparent 25%,
+    rgba(255,255,255,0.045) 46%,
+    rgba(0,212,255,0.055)   52%,
+    transparent 72%
+  );
+  background-size: 300% 300%;
+  background-position: -100% 0%;
+  animation: light-sweep 5.5s ease-in-out infinite 2s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes light-sweep {
+  0%  { background-position: -100% 0%; }
+  55% { background-position:  220% 0%; }
+  100%{ background-position:  220% 0%; }
+}
+
+@keyframes knight-float {
+  0%   { transform: translateY(0)     rotateY(0deg)    rotateX(0deg); }
+  22%  { transform: translateY(-20px) rotateY(3.5deg)  rotateX(1deg); }
+  50%  { transform: translateY(-24px) rotateY(-2deg)   rotateX(0.5deg); }
+  78%  { transform: translateY(-14px) rotateY(2.8deg)  rotateX(-1deg); }
+  100% { transform: translateY(0)     rotateY(0deg)    rotateX(0deg); }
+}
+
+/* SVG with CSS drop-shadow for depth */
+.knight-svg {
+  width: min(290px, 82%);
+  height: auto;
+  filter:
+    drop-shadow(0 0 30px rgba(0,212,255,0.48))
+    drop-shadow(0 0 80px rgba(0,212,255,0.18))
+    drop-shadow(0 36px 48px rgba(0,0,0,0.65));
+}
+
+/* Reflection pool below */
+.knight-reflection {
+  width: 110px; height: 10px;
+  margin-top: 18px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,212,255,0.38) 0%, transparent 70%);
+  filter: blur(2px);
+  animation: reflect-scale 5.5s ease-in-out infinite;
+}
+
+@keyframes reflect-scale {
+  0%,100% { transform: scaleX(1);    opacity: 0.65; }
+  22%     { transform: scaleX(0.76); opacity: 0.28; }
+  50%     { transform: scaleX(0.70); opacity: 0.22; }
+  78%     { transform: scaleX(0.82); opacity: 0.38; }
+}
+
+/* Floating micro-particles */
+.knight-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-drift 7s ease-in-out infinite;
+}
+
+.kp-1 { width: 3px; height: 3px; background: var(--cyan);  top: 18%; left: 10%;   animation-duration: 7.5s; opacity: 0.65; }
+.kp-2 { width: 2px; height: 2px; background: var(--green); top: 28%; right: 8%;   animation-duration: 9.5s; animation-delay: 1.5s; opacity: 0.5; }
+.kp-3 { width: 4px; height: 4px; background: var(--cyan);  bottom: 26%; left: 16%; animation-duration: 8s;   animation-delay: 3.2s; opacity: 0.35; }
+.kp-4 { width: 2px; height: 2px; background: var(--green); top: 56%;  right: 14%; animation-duration: 6.5s; animation-delay: 0.8s; opacity: 0.55; }
+.kp-5 { width: 3px; height: 3px; background: var(--cyan);  bottom: 38%; right: 20%; animation-duration: 10s;  animation-delay: 4s;   opacity: 0.4; }
+
+@keyframes particle-drift {
+  0%,100% { transform: translateY(0)     translateX(0);    opacity: 0.6; }
+  33%     { transform: translateY(-22px) translateX(10px); opacity: 0.22; }
+  66%     { transform: translateY(-11px) translateX(-8px); opacity: 0.75; }
+}
+
+/* ── Entrance animations ── */
 .hero-badge   { animation: h-in 0.8s ease both 0.1s; }
 .hero-title   { animation: h-in 0.8s ease both 0.25s; }
 .hero-sub     { animation: h-in 0.8s ease both 0.4s; }
@@ -230,22 +253,22 @@
 .hero-visual  { animation: h-in-r 0.9s ease both 0.35s; }
 
 @keyframes h-in {
-  from { opacity:0; transform: translateY(26px); }
-  to   { opacity:1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes h-in-r {
-  from { opacity:0; transform: translateX(36px); }
-  to   { opacity:1; transform: translateX(0); }
+  from { opacity: 0; transform: translateX(36px) scale(0.96); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-visual { height: 340px; order: -1; }
+  .hero-grid   { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { height: 380px; order: -1; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding: 100px 0 60px; }
-  .hero-stats { gap: 18px; flex-wrap: wrap; }
-  .float-card { display: none; }
+  .hero        { padding: 100px 0 60px; }
+  .hero-stats  { gap: 18px; flex-wrap: wrap; }
+  .knight-svg  { width: min(240px, 76%); }
 }

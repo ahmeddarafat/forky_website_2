@@ -17,38 +17,34 @@ export default function Nav() {
   return (
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="navbar">
-        <div className="container">
-          <div className="nav-inner">
-            <a href="#" className="nav-logo">
-              <div className="nav-logo-icon">F</div>
-              <span className="nav-logo-text">{site.name}</span>
-            </a>
+        <a href="#" className="nav-logo">
+          <div className="nav-logo-icon">F</div>
+          <span className="nav-logo-text">{site.name}</span>
+        </a>
 
-            <ul className="nav-links">
-              {navLinks.map(({ label, href }) => (
-                <li key={href}><a href={href}>{label}</a></li>
-              ))}
-            </ul>
+        <ul className="nav-links">
+          {navLinks.map(({ label, href }) => (
+            <li key={href}><a href={href}>{label}</a></li>
+          ))}
+        </ul>
 
-            <a href="#cta" className="btn-primary">Get Started →</a>
+        <a href="#cta" className="nav-cta">Get Started →</a>
 
-            <button
-              className={`hamburger${menuOpen ? ' open' : ''}`}
-              aria-label="Toggle navigation"
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(o => !o)}
-            >
-              <span /><span /><span />
-            </button>
-          </div>
-        </div>
+        <button
+          className={`hamburger${menuOpen ? ' open' : ''}`}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          <span /><span /><span />
+        </button>
       </nav>
 
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
         {mobileNavLinks.map(({ label, href }) => (
           <a key={href} href={href} onClick={closeMenu}>{label}</a>
         ))}
-        <a href="#cta" className="btn-primary" onClick={closeMenu}>Get Started →</a>
+        <a href="#cta" className="nav-cta" onClick={closeMenu}>Get Started →</a>
       </div>
     </>
   );
