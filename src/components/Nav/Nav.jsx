@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Nav.css';
 import { navLinks, mobileNavLinks, site } from '../../data/index.js';
+import logoImg from '../../assets/logo.png';
 
 export default function Nav() {
   const [scrolled,  setScrolled]  = useState(false);
@@ -18,8 +19,7 @@ export default function Nav() {
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="navbar">
         <a href="#" className="nav-logo">
-          <div className="nav-logo-icon">F</div>
-          <span className="nav-logo-text">{site.name}</span>
+          <img src={logoImg} alt={site.name} className="nav-logo-img" />
         </a>
 
         <ul className="nav-links">

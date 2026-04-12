@@ -1,5 +1,6 @@
 import './Footer.css';
 import { site, footerSocials, footerCols } from '../../data/index.js';
+import logoImg from '../../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -10,8 +11,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <a href="#" className="footer-logo">
-              <div className="nav-logo-icon">F</div>
-              <span className="nav-logo-text">{site.name}</span>
+              <img src={logoImg} alt={site.name} className="footer-logo-img" />
             </a>
             <p className="footer-tagline">{site.tagline}</p>
             <div className="footer-social">
