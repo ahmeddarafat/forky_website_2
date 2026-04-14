@@ -1,16 +1,8 @@
-import { useEffect } from 'react';
-import Nav          from './components/Nav/Nav.jsx';
-import Hero         from './components/Hero/Hero.jsx';
-import Services     from './components/Services/Services.jsx';
-import Trust        from './components/Trust/Trust.jsx';
-import Problem      from './components/Problem/Problem.jsx';
-import Method       from './components/Method/Method.jsx';
-import Results      from './components/Results/Results.jsx';
-import Capabilities from './components/Capabilities/Capabilities.jsx';
-import CTA          from './components/CTA/CTA.jsx';
-import Footer       from './components/Footer/Footer.jsx';
+'use client';
 
-export default function App() {
+import { useEffect } from 'react';
+
+export default function ScrollReveal() {
   // Scroll-reveal observer
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,18 +39,5 @@ export default function App() {
     return () => document.removeEventListener('click', handleClick);
   }, []);
 
-  return (
-    <>
-      <Nav />
-      <Hero />
-      <Services />
-      <Trust />
-      <Problem />
-      <Method />
-      <Results />
-      <Capabilities />
-      <CTA />
-      <Footer />
-    </>
-  );
+  return null;
 }

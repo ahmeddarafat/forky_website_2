@@ -1,6 +1,7 @@
 import './Hero.css';
 import { hero } from '../../data/index.js';
-import heroImg from '../../assets/hero.png';
+
+const heroImg = '/hero.png';
 
 function KnightVisual() {
   return (
@@ -15,7 +16,6 @@ function KnightVisual() {
           className="knight-img"
           draggable={false}
         />
-        <div className="knight-reflection" />
       </div>
 
       <div className="knight-particle kp-1" />

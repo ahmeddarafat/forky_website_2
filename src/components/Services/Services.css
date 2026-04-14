@@ -73,7 +73,7 @@
 }
 
 .sc-card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-10px) scale(1.02);
   border-color: rgba(0,212,255,0.42);
   box-shadow:
     inset 0px -30px 46.8px -33px #0c5b64,
@@ -95,15 +95,26 @@
   filter: blur(26.9px);
   background: linear-gradient(180deg, #0c5b64 0%, #0c5b64 100%);
   pointer-events: none;
-  transition: filter 0.42s ease;
+  animation: sc-orb-pulse 4s ease-in-out infinite;
 }
 
-.sc-card:hover .sc-card-orb { filter: blur(22px); }
+@keyframes sc-orb-pulse {
+  0%,100% { filter: blur(26.9px); opacity: 0.85; transform: rotate(51.41deg) scale(1); }
+  50%     { filter: blur(18px);   opacity: 1;    transform: rotate(51.41deg) scale(1.3); }
+}
+
+.sc-card:hover .sc-card-orb { filter: blur(14px); opacity: 1; transform: rotate(51.41deg) scale(1.5); }
 
 .sc-icon {
   position: relative;
   width: 40px; height: 40px;
   flex-shrink: 0;
+  animation: sc-icon-float 3.5s ease-in-out infinite;
+}
+
+@keyframes sc-icon-float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
 }
 
 .sc-content {
@@ -115,22 +126,21 @@
 }
 
 .sc-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   line-height: 1.325;
   margin: 0;
-  transition: color 0.3s ease;
 }
 
-.sc-card:hover .sc-title { color: var(--cyan); }
+.sc-card:hover .sc-title { color: #ffffff; }
 
 .sc-desc {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  color: #919191;
+  color: #ffffff;
   line-height: 1.6;
   margin: 0;
 }
@@ -151,7 +161,7 @@
   transition: color 0.3s ease;
 }
 
-.sc-card:hover .sc-learn-text { color: var(--cyan); }
+.sc-card:hover .sc-learn-text { color: #ffffff; }
 
 .sc-learn-arrow {
   width: 20px; height: 20px;
@@ -170,7 +180,38 @@
 
 .sc-card:hover .sc-learn-arrow svg path,
 .sc-card:hover .sc-learn-arrow svg line,
-.sc-card:hover .sc-learn-arrow svg polyline { stroke: var(--cyan); }
+.sc-card:hover .sc-learn-arrow svg polyline { stroke: #ffffff; }
+
+/* ── Card shimmer sweep on hover ── */
+.sc-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 38px;
+  background: linear-gradient(
+    108deg,
+    transparent 30%,
+    rgba(0,212,255,0.055) 48%,
+    rgba(255,255,255,0.04) 52%,
+    transparent 70%
+  );
+  background-size: 250% 250%;
+  background-position: -100% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sc-card:hover::after {
+  opacity: 1;
+  animation: sc-shimmer 1.1s ease forwards;
+}
+
+@keyframes sc-shimmer {
+  from { background-position: -100% 0; }
+  to   { background-position:  200% 0; }
+}
 
 /* ── Scroll reveal ───────────────────────────────────────────── */
 .sc-heading-reveal {
@@ -183,13 +224,13 @@
 
 .sc-card-reveal {
   opacity: 0;
-  transform: translateY(46px);
+  transform: translateY(46px) scale(0.96);
   transition:
     opacity   0.75s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sc-card-reveal.visible { opacity:1; transform:translateY(0); }
+.sc-card-reveal.visible { opacity:1; transform:translateY(0) scale(1); }
 
 /* Responsive */
 @media (max-width: 1024px) {

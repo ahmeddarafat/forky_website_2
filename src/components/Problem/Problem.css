@@ -5,7 +5,7 @@
   padding: 104px 0;
 }
 
-.problem-list { max-width: 760px; margin: 0 auto; }
+.problem-list { max-width: 760px; margin: 0; }
 
 .problem-item {
   display: grid;

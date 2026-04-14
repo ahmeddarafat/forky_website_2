@@ -8,15 +8,13 @@ export default function Trust() {
         <p className="trust-label">Trusted by innovative teams worldwide</p>
         <div className="trust-wrap">
           <div className="trust-track">
-            {[...trustLogos, ...trustLogos].map(({ icon, color, bg, name }, i) => (
-              <div
-                key={`${name}-${i}`}
-                className="trust-logo"
-                style={{ background: bg }}
-                title={name}
-              >
-                <span className="trust-logo-icon" style={{ color }}>{icon}</span>
-                <span>{name}</span>
+            {[...trustLogos, ...trustLogos].map(({ iconSvg, name }, i) => (
+              <div key={`${name}-${i}`} className="trust-logo" title={name}>
+                <span
+                  className="trust-logo-icon"
+                  dangerouslySetInnerHTML={{ __html: iconSvg }}
+                />
+                <span className="trust-logo-name">{name}</span>
               </div>
             ))}
           </div>

@@ -1,7 +1,10 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import './Nav.css';
 import { navLinks, mobileNavLinks, site } from '../../data/index.js';
-import logoImg from '../../assets/logo.png';
+
+const logoImg = '/logo_with_word.png';
 
 export default function Nav() {
   const [scrolled,  setScrolled]  = useState(false);

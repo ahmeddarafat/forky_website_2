@@ -1,6 +1,7 @@
 import './Footer.css';
 import { site, footerSocials, footerCols } from '../../data/index.js';
-import logoImg from '../../assets/logo.png';
+
+const logoImg = '/logo.png';
 
 export default function Footer() {
   return (

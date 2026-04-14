@@ -6,10 +6,13 @@ export default function Problem() {
     <section className="problem" id="problem">
       <div className="container">
 
-        <div className="section-header fade-up">
-          <span className="tag">The Problem</span>
-          <h2>Why most companies <span className="hl">plateau.</span></h2>
-          <p>Growth stalls — not from lack of effort, but from systems that were never built to scale together.</p>
+        <div className="split-header fade-up">
+          <div className="split-header-left">
+            <span className="tag">The Problem</span>
+            <h2>Why most companies <span className="hl">plateau.</span></h2>
+            <p>Growth stalls — not from lack of effort, but from systems that were never built to scale together.</p>
+          </div>
+          <a href="#method" className="btn-secondary">See Our Method →</a>
         </div>
 
         <ul className="problem-list">

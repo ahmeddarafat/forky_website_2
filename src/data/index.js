@@ -31,9 +31,8 @@ export const mobileNavLinks = [
 export const hero = {
   badge:    'Trusted by 200+ businesses worldwide',
   titleLines: [
-    'Where Software',
-    'Meets <span class="hl">Smarter</span>',
-    'Marketing',
+    'Where Software Meets',
+    'Smarter Marketing',
   ],
   sub: 'Forky builds cutting-edge digital products and data-driven marketing engines that compound. We turn ambitious vision into measurable, scalable growth.',
   ctaPrimary:   { label: 'Start Building →',    href: '#cta' },
@@ -113,14 +112,38 @@ export const services = [
 
 // ─── Trust logos ─────────────────────────────────────────────
 export const trustLogos = [
-  { icon: '✦', color: '#818CF8',       bg: 'rgba(99,102,241,.14)',  name: 'Nexus AI'   },
-  { icon: '◈', color: '#FB923C',       bg: 'rgba(251,146,60,.14)',  name: 'Orbitly'    },
-  { icon: '⬡', color: '#22C55E',       bg: 'rgba(34,197,94,.14)',   name: 'Greenfield' },
-  { icon: '◇', color: 'var(--cyan)',   bg: 'rgba(0,212,255,.14)',   name: 'Stratos'    },
-  { icon: '✧', color: '#EC4899',       bg: 'rgba(236,72,153,.14)',  name: 'PinkLane'   },
-  { icon: '⬢', color: '#EAB308',       bg: 'rgba(234,179,8,.14)',   name: 'Goldmark'   },
-  { icon: '❋', color: '#A855F7',       bg: 'rgba(168,85,247,.14)',  name: 'Vivlabs'    },
-  { icon: '◆', color: '#EF4444',       bg: 'rgba(239,68,68,.14)',   name: 'RedShift'   },
+  {
+    name: 'Vercel',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2L23 21H1L12 2Z"/></svg>`,
+  },
+  {
+    name: 'Stripe',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 4c-2.6 0-4.5 1.5-4.5 3.9 0 4 6.5 3 6.5 5.8 0 1.1-.9 1.7-2.3 1.7-1.6 0-3.2-.8-4.2-2l-1.8 2.1C7 17.1 9.1 18 11.7 18c3 0 5.2-1.5 5.2-4.1 0-3.9-6.5-2.9-6.5-5.7 0-.8.8-1.3 2.1-1.3 1.2 0 2.5.5 3.4 1.4L17.5 6.1C16.1 4.7 14.2 4 12 4z"/></svg>`,
+  },
+  {
+    name: 'GitHub',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.8c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>`,
+  },
+  {
+    name: 'Figma',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="8" height="8" rx="2" fill="white" opacity="0.65"/><rect x="12" y="2" width="8" height="8" rx="4" fill="white" opacity="0.9"/><rect x="4" y="10" width="8" height="8" rx="2" fill="white" opacity="0.8"/><rect x="4" y="18" width="8" height="4" rx="2" fill="white" opacity="0.5"/><circle cx="16" cy="14" r="4" fill="white"/></svg>`,
+  },
+  {
+    name: 'Notion',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="white" fill-opacity="0.1" stroke="white" stroke-width="1.5"/><path d="M7 7h1.5l5.5 7.5V9L15.5 7H17v10h-1.5L10 9.5V16L8.5 17H7V7z" fill="white"/></svg>`,
+  },
+  {
+    name: 'Linear',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M3 14.5L14.5 3l6 6L9.5 20.5zM3 20.5h6.5V14z" opacity="0.9"/><path d="M20.5 9L15 3.5h5.5V9z"/></svg>`,
+  },
+  {
+    name: 'Shopify',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15.5 6C15.2 4.3 14 3 12 3c-1.8 0-3.2 1.2-3.8 3H6.5L5 21h14L17.5 6h-2zm-3.5-1c.8 0 1.4.5 1.7 1.5H9.8C10.2 5.5 11 5 12 5z" fill="white" opacity="0.9"/><line x1="12" y1="9" x2="12" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  },
+  {
+    name: 'Slack',
+    iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="5.5" r="2" fill="white"/><circle cx="8.5" cy="11.5" r="2" fill="white" opacity="0.7"/><circle cx="14.5" cy="11.5" r="2" fill="white"/><circle cx="14.5" cy="17.5" r="2" fill="white" opacity="0.7"/><circle cx="5.5" cy="8.5" r="2" fill="white" opacity="0.7"/><circle cx="11.5" cy="8.5" r="2" fill="white"/><circle cx="11.5" cy="14.5" r="2" fill="white" opacity="0.75"/><circle cx="17.5" cy="14.5" r="2" fill="white"/></svg>`,
+  },
 ];
 
 // ─── Problems ────────────────────────────────────────────────

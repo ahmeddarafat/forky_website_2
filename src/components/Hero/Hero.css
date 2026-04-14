@@ -31,7 +31,7 @@
   gap: 8px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--green);
+  color: #ffffff;
   background: var(--green-dim);
   border: 1px solid rgba(0, 255, 157, 0.18);
   padding: 6px 14px;
@@ -48,7 +48,7 @@
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 5.8vw, 4.2rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.035em;
   color: var(--text-primary);
@@ -57,14 +57,11 @@
 }
 
 .hero-title .hl {
-  background: linear-gradient(135deg, var(--cyan) 0%, var(--green) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .hero-sub {
-  font-size: 1.08rem;
+  font-size: 0.90rem;
   color: var(--text-secondary);
   line-height: 1.78;
   margin-bottom: 38px;
@@ -74,12 +71,12 @@
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 32px;
   align-items: center;
 }
 
-.hero-actions .btn-primary  { font-size: 1rem; padding: 13px 28px; }
-.hero-actions .btn-secondary { font-size: 1rem; padding: 12px 28px; }
+.hero-actions .btn-primary  { font-size: 0.85rem; padding: 10px 28px; border-radius: 15px; }
+.hero-actions .btn-secondary { font-size: 0.85rem; padding: 10px 28px; border-radius: 15px; }
 
 .hero-stats {
   display: flex;
@@ -90,14 +87,11 @@
 }
 
 .hero-stat-val {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--cyan), var(--green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -163,31 +157,6 @@
   animation: knight-float 5.5s ease-in-out infinite;
 }
 
-/* Moving light-sweep reflection */
-.knight-3d::before {
-  content: '';
-  position: absolute;
-  inset: -8%;
-  border-radius: 12px;
-  background: linear-gradient(
-    118deg,
-    transparent 25%,
-    rgba(255,255,255,0.045) 46%,
-    rgba(0,212,255,0.055)   52%,
-    transparent 72%
-  );
-  background-size: 300% 300%;
-  background-position: -100% 0%;
-  animation: light-sweep 5.5s ease-in-out infinite 2s;
-  pointer-events: none;
-  z-index: 3;
-}
-
-@keyframes light-sweep {
-  0%  { background-position: -100% 0%; }
-  55% { background-position:  220% 0%; }
-  100%{ background-position:  220% 0%; }
-}
 
 @keyframes knight-float {
   0%   { transform: translateY(0)     rotateY(0deg)    rotateX(0deg); }
@@ -199,29 +168,10 @@
 
 /* SVG with CSS drop-shadow for depth */
 .knight-img {
-  width: min(400px, 90%);
+  width: min(450px, 72%);
   height: auto;
-  /* multiply: white background disappears, black knight stays black */
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 40px 56px rgba(0, 0, 0, 0.8));
   user-select: none;
-}
-
-/* Reflection pool below */
-.knight-reflection {
-  width: 110px; height: 10px;
-  margin-top: 18px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(0,212,255,0.38) 0%, transparent 70%);
-  filter: blur(2px);
-  animation: reflect-scale 5.5s ease-in-out infinite;
-}
-
-@keyframes reflect-scale {
-  0%,100% { transform: scaleX(1);    opacity: 0.65; }
-  22%     { transform: scaleX(0.76); opacity: 0.28; }
-  50%     { transform: scaleX(0.70); opacity: 0.22; }
-  78%     { transform: scaleX(0.82); opacity: 0.38; }
 }
 
 /* Floating micro-particles */

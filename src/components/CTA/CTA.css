@@ -1,99 +1,172 @@
-/* ── Final CTA ───────────────────────────────────────────────── */
+/* ── Contact / CTA ───────────────────────────────────────────── */
 .cta-section {
   position: relative;
   z-index: 1;
-  padding: 128px 0;
+  padding: 80px 0 120px;
   overflow: hidden;
 }
 
-.cta-glow {
+.cta-bg-glow {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75vw; height: 65vh;
-  background: radial-gradient(ellipse,
-    rgba(0,212,255,0.085) 0%,
-    rgba(0,255,157,0.04) 40%,
-    transparent 70%);
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80vw; height: 60vh;
+  background: radial-gradient(ellipse at 50% 100%,
+    rgba(255, 255, 255, 0.04) 0%,
+    transparent 65%);
   pointer-events: none;
 }
 
-.cta-inner {
+/* Glass card container */
+.cta-card {
   position: relative;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 72px 64px;
+  overflow: hidden;
 }
 
-.cta-inner::before {
+.cta-card::before {
   content: '';
   position: absolute;
-  top: -44px; left: 50%;
-  transform: translateX(-50%);
-  width: 1px; height: 40px;
-  background: linear-gradient(180deg, transparent, var(--cyan));
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
 }
 
-.cta-inner h2 {
-  font-size: clamp(2rem, 4.5vw, 3.3rem);
+.cta-card::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; right: -80px;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.025) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Left column */
+.cta-left .tag { margin-bottom: 24px; }
+
+.cta-left h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+  color: #ffffff;
   margin-bottom: 18px;
   line-height: 1.1;
 }
 
-.cta-inner h2 .hl {
-  background: linear-gradient(135deg, var(--cyan), var(--green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.cta-left h2 .hl { color: #ffffff; }
 
-.cta-inner p {
-  font-size: 1.08rem;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
+.cta-left p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.58);
   line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 480px;
 }
-
-.cta-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cta-actions .btn-primary  { font-size: 1.02rem; padding: 14px 32px; box-shadow: 0 0 42px rgba(0,212,255,0.32); }
-.cta-actions .btn-primary:hover { box-shadow: 0 0 65px rgba(0,212,255,0.55); }
-.cta-actions .btn-secondary { font-size: 1.02rem; padding: 13px 32px; }
 
 .cta-trust {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  margin-top: 32px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 11px;
 }
 
 .cta-trust-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
 }
 
-.check-icon {
+.cta-check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 15px; height: 15px;
-  border-radius: 50%;
-  background: var(--green-dim);
-  border: 1px solid rgba(0,255,157,0.2);
-  font-size: 0.55rem;
-  color: var(--green);
+  font-size: 0.6rem;
+  color: #ffffff;
+  font-weight: 700;
   flex-shrink: 0;
+}
+
+/* Right column — contact card */
+.cta-right { position: relative; z-index: 2; }
+
+.cta-contact-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.cta-contact-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.cta-contact-sub {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.cta-main-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.9rem !important;
+  padding: 14px 24px !important;
+  border-radius: 10px !important;
+  margin-bottom: 14px;
+}
+
+.cta-phone-link {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  padding: 8px 0;
+}
+
+.cta-phone-link:hover { color: #ffffff; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .cta-card {
+    grid-template-columns: 1fr;
+    padding: 52px 40px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-section { padding: 60px 0 80px; }
+  .cta-card { padding: 36px 24px; border-radius: 20px; }
+  .cta-contact-card { padding: 32px 24px; }
 }
