@@ -20,7 +20,6 @@ export default function Services() {
             <div
               key={title}
               className="sc-card sc-card-reveal"
-              style={{ transitionDelay: delay }}
             >
               <div className="sc-card-orb" />
               <div

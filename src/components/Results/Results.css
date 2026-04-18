@@ -4,8 +4,7 @@
   position: relative;
   z-index: 1;
   padding: 9rem 0;
-  overflow: hidden;
-  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
 }
 
 .cs-bg-glow {
@@ -33,40 +32,50 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .cs-label {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.6875rem;
+  gap: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  padding: 5px 13px;
+  border-radius: 100px;
+  margin-bottom: 20px;
 }
 
 .cs-label::before {
   content: '';
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: #ffffff;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 7px var(--cyan);
 }
 
 .cs-title {
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  font-weight: 900;
-  color: white;
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
   margin: 0;
 }
 
 .cs-gradient-text {
-  color: #ffffff;
+  background: linear-gradient(135deg, #2dd4bf 0%, #34d399 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cs-btn {
@@ -123,17 +132,18 @@
   display: flex;
   flex-direction: column;
   border-radius: 28px;
-  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.06);
   cursor: pointer;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-  transition: border-color 0.5s, box-shadow 0.5s, transform 0.5s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform;
+  overflow: hidden;
 }
 
 .cs-card:hover {
-  border-color: rgba(45,212,191,0.15);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.07), 0 0 0 1px rgba(45,212,191,0.06);
-  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(45,212,191,0.28);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.07), 0 0 50px rgba(45,212,191,0.12);
+  transform: translateY(-10px) scale(1.02);
 }
 
 .cs-card-preview {
@@ -194,12 +204,12 @@
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.cs-client { font-size: 1rem; font-weight: 700; color: white; margin: 0 0 2px; letter-spacing: -0.01em; }
-.cs-industry { color: #ffffff; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 1.25rem; }
+.cs-client { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #EDF4FF; margin: 0 0 2px; letter-spacing: -0.01em; }
+.cs-industry { color: rgba(237,244,255,0.4); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 1.25rem; }
 
 .cs-details { flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
-.cs-detail-label { color: #ffffff; font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 4px; font-weight: 700; }
-.cs-detail-text  { color: #ffffff; font-size: 0.875rem; line-height: 1.4; margin: 0; }
+.cs-detail-label { color: rgba(237,244,255,0.38); font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em; margin: 0 0 4px; font-weight: 700; }
+.cs-detail-text  { color: rgba(237,244,255,0.75); font-family: 'Inter', sans-serif; font-size: 0.875rem; line-height: 1.4; margin: 0; }
 
 .cs-card-footer {
   display: flex;

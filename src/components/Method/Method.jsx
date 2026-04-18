@@ -20,7 +20,6 @@ export default function Method() {
             <div key={num} className="method-step fade-up">
               <div className="method-dot-wrap">
                 <div className="method-dot">{emoji}</div>
-                <div className="method-step-num">0{num}</div>
               </div>
               <h3 className="method-title">{title}</h3>
               <p className="method-desc">{desc}</p>

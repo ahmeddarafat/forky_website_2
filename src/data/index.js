@@ -150,21 +150,25 @@ export const trustLogos = [
 export const problems = [
   {
     num:   '01',
+    icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="12.5" y="1.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="1.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="12.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><line x1="9.5" y1="5.5" x2="12.5" y2="5.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.5 1.5" stroke-linecap="round" opacity="0.5"/><line x1="5.5" y1="9.5" x2="5.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.5 1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
     title: 'Fragmented tech stacks slow everything down',
-    body:  'Dozens of disconnected tools create data silos and costly integrations — teams spend more time managing software than <em>actually growing</em>.',
+    body:  'Disconnected tools create data silos and costly integrations — teams spend more time managing software than <em>actually growing</em>.',
   },
   {
     num:   '02',
+    icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16L8 10L12 13L17 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/><path d="M14 15L17 18M17 15L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="19.5" x2="20" y2="19.5" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.3" opacity="0.5"/></svg>`,
     title: 'Marketing without data is expensive guesswork',
-    body:  'Without a proper feedback loop between campaigns and product performance, businesses <em>burn budget</em> on tactics that feel good but don\'t convert.',
+    body:  'Without a proper feedback loop, businesses <em>burn budget</em> on tactics that feel good but never convert into real, measurable growth.',
   },
   {
     num:   '03',
+    icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><circle cx="11" cy="11" r="1.5" fill="currentColor" opacity="0.25"/><line x1="16.2" y1="5.8" x2="18" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/><path d="M17 4L19 4M19 4L19 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`,
     title: 'Generic agencies can\'t deliver real depth',
-    body:  'Most agencies offer surface-level execution. They rarely understand both the technical architecture and <em>growth mechanics</em> needed for compounding results.',
+    body:  'Most agencies offer surface-level execution. They rarely understand both technical architecture and the <em>growth mechanics</em> needed to compound.',
   },
   {
     num:   '04',
+    icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 2L20.5 19.5H1.5L11 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="11" y1="8.5" x2="11" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="16.5" r="1.1" fill="currentColor"/></svg>`,
     title: 'Scaling chaos without an underlying system',
     body:  'Growth without operational systems leads to inconsistent quality, missed deadlines, and <em>unsustainable momentum</em> that collapses under its own weight.',
   },
@@ -239,31 +243,120 @@ export const caseStudies = [
 ];
 
 // ─── Capabilities ────────────────────────────────────────────
-export const capabilities = [
-  { icon: '⚙️', title: 'Custom Software Development', desc: 'Scalable web & mobile apps on modern architecture — MVP to enterprise.'                         },
-  { icon: '📊', title: 'Performance Marketing',        desc: 'ROI-driven paid media, SEO & growth campaigns across every high-value channel.'                 },
-  { icon: '🤖', title: 'AI & Automation Systems',      desc: 'Intelligent workflow automation and AI integration to reduce overhead and unlock scale.'         },
-  { icon: '🎨', title: 'Product Design & UX',          desc: 'Research-backed design systems and interfaces that convert and retain users.'                    },
-  { icon: '🔗', title: 'Systems Integration',          desc: 'Connect your full tech stack — CRM, analytics, payments, communications, and more.'             },
-  { icon: '📈', title: 'Data Analytics & BI',          desc: 'Custom dashboards and data pipelines for real-time, confident decision-making.'                 },
-  { icon: '📧', title: 'Content & Email Marketing',    desc: 'Data-driven content strategy and lifecycle email programs that compound returns.'               },
-  { icon: '☁️', title: 'Cloud Infrastructure',         desc: 'Scalable, secure and cost-optimized architecture on AWS, GCP, or Azure.'                       },
-  { icon: '🛡️', title: 'Security & Compliance',        desc: 'End-to-end security audits, GDPR/CCPA compliance, and hardened deployment practices.'          },
+export const capabilityTabs = [
+  {
+    id:       'build',
+    label:    'Build',
+    subtitle: 'World-class engineering, shipped fast',
+    icon: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 4L1 9L5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 4L17 9L13 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 2L7 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    items: [
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 7L2 16L8 25" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 7L30 16L24 25" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 4L13 28" stroke="#00FF9D" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+        title:  'Custom Software',
+        desc:   'Scalable apps, zero compromise.',
+        detail: 'React, Next.js, Node, and beyond — from MVP to enterprise-grade.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="9" width="22" height="16" rx="2.5" stroke="#00D4FF" stroke-width="1.5"/><path d="M5 14h22" stroke="#00D4FF" stroke-width="1.2" stroke-opacity="0.4"/><circle cx="23" cy="11.5" r="1.5" fill="#00FF9D"/><path d="M10 19h6M10 22h4" stroke="#00D4FF" stroke-width="1.3" stroke-linecap="round" stroke-opacity="0.55"/><path d="M12 9V6M20 9V6" stroke="#00D4FF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.35"/></svg>`,
+        title:  'Product Design',
+        desc:   'Interfaces that convert and retain.',
+        detail: 'Research-backed design systems built for clarity, speed, and trust.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="16" r="3.5" stroke="#00D4FF" stroke-width="1.5"/><circle cx="26" cy="8" r="3.5" stroke="#00D4FF" stroke-width="1.5"/><circle cx="26" cy="24" r="3.5" stroke="#00D4FF" stroke-width="1.5"/><path d="M9.5 16H14M14 16L22.5 9.5M14 16L22.5 22.5" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+        title:  'Systems Integration',
+        desc:   'One stack, fully connected.',
+        detail: 'CRM, analytics, payments, and comms — unified without friction.',
+      },
+    ],
+  },
+  {
+    id:       'grow',
+    label:    'Grow',
+    subtitle: 'Precision-engineered growth, at scale',
+    icon: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 13L7 8L11 11L16 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 5H16V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    items: [
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="19" width="6" height="9" rx="1.5" fill="#00D4FF" fill-opacity="0.35"/><rect x="13" y="13" width="6" height="15" rx="1.5" fill="#00D4FF" fill-opacity="0.6"/><rect x="22" y="7" width="6" height="21" rx="1.5" fill="#00D4FF"/><path d="M26 5H30V9" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 5L22 13" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+        title:  'Performance Marketing',
+        desc:   'ROI-driven campaigns that compound.',
+        detail: 'Paid media, SEO, and multi-channel systems built to scale.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="8" width="24" height="17" rx="2.5" stroke="#00D4FF" stroke-width="1.5"/><path d="M4 14L16 20L28 14" stroke="#00D4FF" stroke-width="1.5"/><circle cx="25" cy="9" r="4" fill="#00FF9D" fill-opacity="0.9"/><path d="M23.5 9H26.5M25 7.5V10.5" stroke="#040D1A" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+        title:  'Content & Email',
+        desc:   'Compound content that converts.',
+        detail: 'Data-driven content strategy and lifecycle email programs.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24L10 16L14 20L20 12L25 17L28 10" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="10" r="2.5" fill="#00FF9D"/><line x1="4" y1="27" x2="28" y2="27" stroke="#00D4FF" stroke-width="1" stroke-opacity="0.3"/></svg>`,
+        title:  'Data & Analytics',
+        desc:   'Real-time decision intelligence.',
+        detail: 'Custom dashboards and BI pipelines for confident, fast decisions.',
+      },
+    ],
+  },
+  {
+    id:       'automate',
+    label:    'Automate',
+    subtitle: 'Intelligence wired into every workflow',
+    icon: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M9 2V4M9 14V16M2 9H4M14 9H16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M4.1 4.1L5.5 5.5M12.5 12.5L13.9 13.9M4.1 13.9L5.5 12.5M12.5 5.5L13.9 4.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    items: [
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="6" stroke="#00D4FF" stroke-width="1.5"/><path d="M16 4V8M16 24V28M4 16H8M24 16H28" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/><path d="M7.8 7.8L10.6 10.6M21.4 21.4L24.2 24.2M7.8 24.2L10.6 21.4M21.4 10.6L24.2 7.8" stroke="#00FF9D" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="16" r="2" fill="#00D4FF"/></svg>`,
+        title:  'AI Integration',
+        desc:   'Smarter workflows, instantly.',
+        detail: 'LLM pipelines, intelligent automation, and AI-native product features.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="9" height="9" rx="2" stroke="#00D4FF" stroke-width="1.5"/><rect x="18" y="5" width="9" height="9" rx="2" stroke="#00D4FF" stroke-width="1.5"/><rect x="5" y="18" width="9" height="9" rx="2" stroke="#00D4FF" stroke-width="1.5"/><rect x="18" y="18" width="9" height="9" rx="2" stroke="#00FF9D" stroke-width="1.5"/><path d="M14 9.5H18M14 22.5H18M9.5 14V18M22.5 14V18" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round"/></svg>`,
+        title:  'Workflow Automation',
+        desc:   'Eliminate operational overhead.',
+        detail: 'Automated pipelines, smart triggers, and zero-friction processes.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 21.5C4 21.5 3 20 3 18.5C3 17 4 16 6 16C6 13 8.5 10.5 11.5 10.5C13 10.5 14.3 11.1 15.2 12.1C15.8 11.7 16.6 11.4 17.5 11.4C19.7 11.4 21.5 13.2 21.5 15.4V16H23C24.7 16 26 17.3 26 19C26 20.7 24.7 22 23 22" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/><path d="M13 27V20M11 23.5L13 20L15 23.5" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 26V21M18 24L20 21L22 24" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/></svg>`,
+        title:  'AI Data Pipelines',
+        desc:   'Insight, automated and instant.',
+        detail: 'Automated reporting, anomaly detection, and predictive intelligence.',
+      },
+    ],
+  },
+  {
+    id:       'scale',
+    label:    'Scale',
+    subtitle: 'Infrastructure built to grow without limits',
+    icon: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7.5" width="14" height="4" rx="1.5" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="13" width="14" height="3.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><circle cx="14" cy="9.5" r="1" fill="currentColor"/><circle cx="14" cy="14.75" r="1" fill="currentColor" opacity="0.5"/><path d="M9 2.5L12 5.5H6L9 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`,
+    items: [
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 22C4 22 3 20.5 3 19C3 17.5 4 16.5 6 16.5C6 13.2 8.8 10.5 12 10.5C13.6 10.5 15 11.1 16 12.1C16.7 11.7 17.6 11.5 18.5 11.5C21 11.5 23 13.5 23 16V16.7H24.5C26.4 16.7 28 18.3 28 20.2C28 22.1 26.4 23.7 24.5 23.7" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round"/><path d="M14 28V21M11.5 24.5L14 21L16.5 24.5" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27V22M18 25L20 22L22 25" stroke="#00D4FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>`,
+        title:  'Cloud Infrastructure',
+        desc:   'Scalable, secure, and lean.',
+        detail: 'AWS, GCP, Azure — architected for performance and cost.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4L28 9V17C28 22.5 22.7 27.4 16 29C9.3 27.4 4 22.5 4 17V9L16 4Z" stroke="#00D4FF" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16L14.5 19.5L21 13" stroke="#00FF9D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        title:  'Security & Compliance',
+        desc:   'Hardened by default.',
+        detail: 'GDPR/CCPA, security audits, and hardened deployment at every layer.',
+      },
+      {
+        icon:   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="24" height="5.5" rx="2" stroke="#00D4FF" stroke-width="1.5"/><rect x="4" y="17" width="24" height="5.5" rx="2" stroke="#00D4FF" stroke-width="1.5" opacity="0.55"/><circle cx="26" cy="12.75" r="1.75" fill="#00FF9D"/><circle cx="26" cy="19.75" r="1.75" fill="#00D4FF" opacity="0.45"/><path d="M8 12.75H20M8 19.75H17" stroke="#00D4FF" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/></svg>`,
+        title:  'DevOps & Delivery',
+        desc:   'Ship fast, break nothing.',
+        detail: 'CI/CD pipelines, zero-downtime deploys, and full observability.',
+      },
+    ],
+  },
 ];
 
 // ─── CTA section ─────────────────────────────────────────────
 export const cta = {
-  tag:       "Let's Build Together",
-  title:     'Ready to grow <span class="hl">without limits?</span>',
-  sub:       'Join 200+ businesses that chose Forky to build smarter, scale faster, and market with precision. Your next chapter starts with one conversation.',
-  primary:   { label: 'Schedule a Free Strategy Call →', href: 'mailto:hello@forky.io' },
-  secondary: { label: 'Talk to an Expert',               href: 'tel:+10000000000' },
-  trustItems: [
-    'No commitment required',
-    'Results within 30 days',
-    'Dedicated expert team',
-    'Full transparency',
-  ],
+  tag:       'Ready to Scale?',
+  title:     'Turn Your Vision Into a <span class="hl">Growth Machine.</span>',
+  sub:       'Strategy, software, and marketing — unified under one team. Built to scale, measured in real results.',
+  primary:   { label: 'Start My Project →', href: 'mailto:hello@forky.io' },
+  secondary: { label: 'Or talk to an expert first', href: 'tel:+10000000000' },
 };
 
 // ─── Footer ──────────────────────────────────────────────────

@@ -86,9 +86,8 @@ export default function Results() {
           {caseStudies.map((study, i) => (
             <div
               key={i}
-              className="cs-card"
-              data-reveal="up"
-              style={{ background: cardBgs[i], animationDelay: `${200 + i * 130}ms` }}
+              className="cs-card fade-up"
+              style={{ background: cardBgs[i], transitionDelay: `${i * 100}ms` }}
             >
               {/* Preview area */}
               <div className="cs-card-preview">
