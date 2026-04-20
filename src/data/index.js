@@ -29,14 +29,14 @@ export const mobileNavLinks = [
 
 // ─── Hero ────────────────────────────────────────────────────
 export const hero = {
-  badge:    'Trusted by 200+ businesses worldwide',
+  badge:    'Trusted by 200+ ambitious companies',
   titleLines: [
-    'Where Software Meets',
-    'Smarter Marketing',
+    'We Build Systems',
+    'That <span class="hl">Compound.</span>',
   ],
-  sub: 'Forky builds cutting-edge digital products and data-driven marketing engines that compound. We turn ambitious vision into measurable, scalable growth.',
-  ctaPrimary:   { label: 'Start Building →',    href: '#cta' },
-  ctaSecondary: { label: 'See Real Results',     href: '#results' },
+  sub: 'Most agencies ship deliverables. We engineer growth machines — where software, data, and marketing operate as one compounding system.',
+  ctaPrimary:   { label: 'Start Scaling Now →',  href: '#cta' },
+  ctaSecondary: { label: 'See Our Work',          href: '#results' },
   stats: [
     { value: '200+', label: 'Projects delivered' },
     { value: '98%',  label: 'Client retention' },
@@ -151,26 +151,26 @@ export const problems = [
   {
     num:   '01',
     icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="12.5" y="1.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="1.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4"/><rect x="12.5" y="12.5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.4" opacity="0.35"/><line x1="9.5" y1="5.5" x2="12.5" y2="5.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.5 1.5" stroke-linecap="round" opacity="0.5"/><line x1="5.5" y1="9.5" x2="5.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1.5 1.5" stroke-linecap="round" opacity="0.5"/></svg>`,
-    title: 'Fragmented tech stacks slow everything down',
-    body:  'Disconnected tools create data silos and costly integrations — teams spend more time managing software than <em>actually growing</em>.',
+    title: 'Fragmented stacks kill velocity',
+    body:  'Disconnected tools create invisible debt. Every new integration adds friction — teams end up <em>managing software</em> instead of shipping outcomes.',
   },
   {
     num:   '02',
     icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16L8 10L12 13L17 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/><path d="M14 15L17 18M17 15L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="19.5" x2="20" y2="19.5" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.3" opacity="0.5"/></svg>`,
-    title: 'Marketing without data is expensive guesswork',
-    body:  'Without a proper feedback loop, businesses <em>burn budget</em> on tactics that feel good but never convert into real, measurable growth.',
+    title: 'Marketing without a data loop is a sunk cost',
+    body:  'Without closed-loop attribution, every campaign is a guess. Budgets compound the wrong signals and <em>CAC keeps climbing</em> while ROI stays flat.',
   },
   {
     num:   '03',
     icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.2" opacity="0.45"/><circle cx="11" cy="11" r="1.5" fill="currentColor" opacity="0.25"/><line x1="16.2" y1="5.8" x2="18" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/><path d="M17 4L19 4M19 4L19 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`,
-    title: 'Generic agencies can\'t deliver real depth',
-    body:  'Most agencies offer surface-level execution. They rarely understand both technical architecture and the <em>growth mechanics</em> needed to compound.',
+    title: 'Generalist agencies can\'t go deep enough',
+    body:  'Surface-level execution looks fine in a proposal. But most agencies lack the technical depth to architect systems that <em>actually compound</em> over time.',
   },
   {
     num:   '04',
     icon:  `<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 2L20.5 19.5H1.5L11 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="11" y1="8.5" x2="11" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="16.5" r="1.1" fill="currentColor"/></svg>`,
-    title: 'Scaling chaos without an underlying system',
-    body:  'Growth without operational systems leads to inconsistent quality, missed deadlines, and <em>unsustainable momentum</em> that collapses under its own weight.',
+    title: 'Growth without operating systems collapses',
+    body:  'Momentum without infrastructure is fragile. Inconsistent quality, missed windows, and <em>unsustainable overhead</em> quietly erode every gain you make.',
   },
 ];
 
@@ -178,27 +178,43 @@ export const problems = [
 export const methodSteps = [
   {
     num:   1,
-    emoji: '🔍',
     title: 'Discover',
     desc:  'Deep audit of your stack, market, and competitive landscape. We map data before touching code.',
+    iconSvg: `<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11.5" cy="11.5" r="7.5" stroke="#2dd4bf" stroke-width="1.6"/>
+      <path d="M17 17L22 22" stroke="#2dd4bf" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9 11.5h5M11.5 9v5" stroke="#10b981" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>`,
   },
   {
     num:   2,
-    emoji: '🏗️',
     title: 'Architect',
     desc:  'We design your full system — product, automation, and growth stack — as one cohesive blueprint.',
+    iconSvg: `<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="3" width="9" height="9" rx="2" stroke="#2dd4bf" stroke-width="1.5"/>
+      <rect x="14" y="3" width="9" height="9" rx="2" stroke="#2dd4bf" stroke-width="1.5" opacity="0.5"/>
+      <rect x="3" y="14" width="9" height="9" rx="2" stroke="#2dd4bf" stroke-width="1.5" opacity="0.5"/>
+      <path d="M14 18.5h9M18.5 14v9" stroke="#10b981" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>`,
   },
   {
     num:   3,
-    emoji: '⚡',
     title: 'Execute',
     desc:  'Cross-functional teams build, launch, and iterate in fast cycles — without sacrificing quality.',
+    iconSvg: `<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 3L22.5 20.5H3.5L13 3Z" stroke="#2dd4bf" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M10 14l2.5 2.5L16 11" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
   },
   {
     num:   4,
-    emoji: '📈',
     title: 'Optimize',
     desc:  'Continuous improvement loops driven by real metrics. We don\'t stop at launch — we compound your growth.',
+    iconSvg: `<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 18L9 12L13 15.5L19 8.5L23 5" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 5h3v3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="3" y1="22" x2="23" y2="22" stroke="#2dd4bf" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+    </svg>`,
   },
 ];
 
@@ -361,10 +377,26 @@ export const cta = {
 
 // ─── Footer ──────────────────────────────────────────────────
 export const footerSocials = [
-  { label: '𝕏',  title: 'X / Twitter', href: '#' },
-  { label: 'in', title: 'LinkedIn',    href: '#' },
-  { label: '⌥',  title: 'GitHub',     href: '#' },
-  { label: '▶',  title: 'YouTube',    href: '#' },
+  {
+    title: 'LinkedIn',
+    href: '#',
+    iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.25" r="0.75" fill="currentColor"/><line x1="5" y1="7" x2="5" y2="11.75" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.75 11.75V9.25c0-1.25.7-2.25 1.75-2.25s1.75 1 1.75 2.25v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.75" y1="7" x2="7.75" y2="11.75" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+  },
+  {
+    title: 'X / Twitter',
+    href: '#',
+    iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.12 6.9 13.36 2H12.1L8.56 6.16 5.7 2H2L6.45 8.55 2 14H3.27L7.09 9.54 10.3 14H14L9.12 6.9zm-1.44 1.95-.56-.8L3.24 3.15h1.92l3.52 5.04.55.79 4.57 6.54H11.8L7.68 8.85z" fill="currentColor"/></svg>`,
+  },
+  {
+    title: 'Instagram',
+    href: '#',
+    iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2.6" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="4.5" r="0.7" fill="currentColor"/></svg>`,
+  },
+  {
+    title: 'Facebook',
+    href: '#',
+    iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.3"/><path d="M9.25 5.5H7.9C7.4 5.5 7 5.9 7 6.4v1.35H5.75V9.25H7V14H9V9.25h1.5L10.75 7.75H9V6.5c0-.28.22-.5.5-.5h1.25V5.5H9.25z" fill="currentColor"/></svg>`,
+  },
 ];
 
 export const footerCols = [

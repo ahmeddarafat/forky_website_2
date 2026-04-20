@@ -1,1 +1,496 @@
+/* ═══════════════════════════════════════════════════════════
+   CTA — Premium two-column contact section
+═══════════════════════════════════════════════════════════ */
+
+/* ── Section shell ─────────────────────────────────────────── */
+.cta-section {
+  position: relative;
+  padding: 130px 0 150px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Background: layered radial gradients ──────────────────── */
+.cta-bg-radial {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 70% at 68% 50%,  rgba(45, 212, 191, 0.055) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 15% 75%,  rgba(52, 211, 153, 0.04)  0%, transparent 65%),
+    radial-gradient(ellipse 60% 80% at 50% -5%,  rgba(45, 212, 191, 0.04)  0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Background: tech grid ─────────────────────────────────── */
+.cta-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(45, 212, 191, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.028) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+}
+
+/* ── Background: soft vignette ─────────────────────────────── */
+.cta-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 110% 110% at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.5) 100%);
+  pointer-events: none;
+}
+
+/* ── Light beam behind form ────────────────────────────────── */
+.cta-beam {
+  position: absolute;
+  top: -15%;
+  right: 2%;
+  width: 480px;
+  height: 130%;
+  background: conic-gradient(
+    from 175deg at 55% 50%,
+    transparent 55deg,
+    rgba(45, 212, 191, 0.022) 75deg,
+    transparent 95deg
+  );
+  pointer-events: none;
+  filter: blur(48px);
+  transform-origin: top right;
+}
+
+/* ── Two-column inner layout ───────────────────────────────── */
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT SIDE
+═══════════════════════════════════════════════════════════ */
+
+.cta-left {
+  display: flex;
+  flex-direction: column;
+  transition-delay: 0s;
+}
+
+/* ── Headline ──────────────────────────────────────────────── */
+.cta-headline {
+  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.036em;
+  color: var(--text-primary);
+  line-height: 1.07;
+  margin: 18px 0 24px;
+}
+
+/* Gradient + soft text glow on accent word */
+.cta-hl {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.cta-hl::after {
+  content: 'Your Growth';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(18px);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── Subtext ───────────────────────────────────────────────── */
+.cta-sub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.82;
+  max-width: 400px;
+  margin-bottom: 44px;
+}
+
+/* ── Info cards ────────────────────────────────────────────── */
+.cta-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(45, 212, 191, 0.03);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.cta-info-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(45, 212, 191, 0.3);
+  background: rgba(45, 212, 191, 0.06);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(45, 212, 191, 0.08) inset,
+    0 0 18px rgba(45, 212, 191, 0.06);
+}
+
+.cta-info-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.cta-info-card:hover .cta-info-icon {
+  background: rgba(45, 212, 191, 0.14);
+  box-shadow: 0 0 14px rgba(45, 212, 191, 0.22);
+}
+
+.cta-info-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 2px;
+}
+
+.cta-info-value {
+  font-size: 0.86rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RIGHT SIDE — GLASS FORM CARD
+═══════════════════════════════════════════════════════════ */
+
+.cta-form-wrap {
+  position: relative;
+  transition-delay: 0.12s;
+}
+
+/* Ambient glow orb behind card */
+.cta-form-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(45, 212, 191, 0.09) 0%, transparent 68%);
+  pointer-events: none;
+  filter: blur(28px);
+  z-index: 0;
+}
+
+/* Glass card */
+.cta-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(4, 12, 20, 0.58);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-radius: var(--radius-xl);
+  padding: 46px 42px;
+  /* Gradient border glow */
+  border: 1px solid rgba(45, 212, 191, 0.14);
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.6),
+    0 12px 40px  rgba(0, 0, 0, 0.4),
+    0  4px 12px  rgba(0, 0, 0, 0.3),
+    0 0 0 1px    rgba(255, 255, 255, 0.03) inset,
+    0 1px 0      rgba(45, 212, 191, 0.1)  inset;
+  overflow: hidden;
+}
+
+/* Top-edge glow line */
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.5), transparent);
+  pointer-events: none;
+}
+
+/* Top-right corner accent orb */
+.cta-card::after {
+  content: '';
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Card header ───────────────────────────────────────────── */
+.cta-card-header {
+  margin-bottom: 30px;
+}
+
+.cta-card-pretitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cyan);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.cta-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORM FIELDS — Floating labels
+═══════════════════════════════════════════════════════════ */
+
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.cta-field {
+  position: relative;
+}
+
+.cta-input {
+  width: 100%;
+  background: rgba(45, 212, 191, 0.03);
+  border: 1px solid rgba(45, 212, 191, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px 7px;
+  font-size: 0.875rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-primary);
+  outline: none;
+  transition:
+    border-color 0.28s ease,
+    background   0.28s ease,
+    box-shadow   0.28s ease,
+    transform    0.22s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  caret-color: var(--cyan);
+}
+
+.cta-textarea {
+  resize: none;
+  padding-top: 24px;
+  line-height: 1.65;
+}
+
+/* Floating label */
+.cta-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+/* Adjust for textarea */
+.cta-field--textarea .cta-label {
+  top: 20px;
+  transform: none;
+}
+
+/* Float up when input has content or is focused */
+.cta-input:not(:placeholder-shown) ~ .cta-label,
+.cta-input:focus ~ .cta-label {
+  top: 8px;
+  transform: scale(0.76);
+  color: var(--cyan);
+}
+
+.cta-field--textarea .cta-input:not(:placeholder-shown) ~ .cta-label,
+.cta-field--textarea .cta-input:focus ~ .cta-label {
+  top: 6px;
+  transform: scale(0.76);
+  color: var(--cyan);
+}
+
+/* Optional label part */
+.cta-optional {
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+/* Bottom glow line on focus */
+.cta-field-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.45);
+  pointer-events: none;
+}
+
+/* Focus state: glow + scale */
+.cta-input:focus {
+  border-color: rgba(45, 212, 191, 0.3);
+  background: rgba(45, 212, 191, 0.055);
+  transform: scaleX(1.012);
+  box-shadow:
+    0 0 0 3px rgba(45, 212, 191, 0.07),
+    0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cta-input:focus ~ .cta-field-line {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SUBMIT BUTTON
+═══════════════════════════════════════════════════════════ */
+
+.cta-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 28px;
+  margin-top: 4px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  color: #0a1a18;
+  background: linear-gradient(135deg, var(--cyan) 0%, #22b5a0 55%, var(--green) 100%);
+  box-shadow:
+    0  4px 28px rgba(45, 212, 191, 0.28),
+    0  1px  0   rgba(255, 255, 255, 0.18) inset;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine overlay */
+.cta-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.cta-submit:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 16px 44px rgba(45, 212, 191, 0.38),
+    0  6px 18px rgba(0, 0, 0, 0.3),
+    0  1px  0   rgba(255, 255, 255, 0.2) inset;
+}
+
+.cta-submit:hover::before {
+  opacity: 1;
+}
+
+.cta-submit:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ── Form footnote ─────────────────────────────────────────── */
+.cta-form-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cta-trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 7px var(--green);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 920px) {
+  .cta-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .cta-headline {
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
+  }
+
+  .cta-sub {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-section {
+    padding: 90px 0 110px;
+  }
+
+  .cta-card {
+    padding: 34px 24px;
+  }
+
+  .cta-headline {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+}
 

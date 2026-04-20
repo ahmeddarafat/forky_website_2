@@ -5,7 +5,7 @@
   padding: 36px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(6, 19, 34, 0.55);
+  background: rgba(11, 15, 20, 0.65);
   overflow: hidden;
 }
 
@@ -20,18 +20,20 @@
   margin-bottom: 22px;
 }
 
-/* Scroll container — edges faded via pseudo-elements */
+/* Scroll container — vertical padding lets hover lift/glow breathe */
 .trust-wrap {
   position: relative;
   overflow: hidden;
+  padding: 16px 0;
 }
 
+/* Soft gradient fades on left / right edges */
 .trust-wrap::before,
 .trust-wrap::after {
   content: '';
   position: absolute;
   top: 0; bottom: 0;
-  width: 140px;
+  width: 160px;
   z-index: 2;
   pointer-events: none;
 }
@@ -48,10 +50,10 @@
 /* Track — duplicated logos for seamless loop */
 .trust-track {
   display: flex;
-  gap: 8px;
+  gap: 40px;
   width: max-content;
   /* Slow, premium crawl — no jitter */
-  animation: trust-scroll 40s linear infinite;
+  animation: trust-scroll 48s linear infinite;
   will-change: transform;
 }
 
@@ -65,7 +67,7 @@
   to   { transform: translateX(-50%); }
 }
 
-/* Individual logo pill */
+/* Individual logo pill — NO overflow:hidden so glow is never clipped */
 .trust-logo {
   position: relative;
   display: flex;
@@ -74,54 +76,37 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(237, 244, 255, 0.55);
+  color: rgba(237, 244, 255, 0.62);
   letter-spacing: -0.01em;
   white-space: nowrap;
-  padding: 8px 20px;
+  padding: 9px 22px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
-  overflow: hidden;
-  /* Muted by default */
-  filter: grayscale(0.4) brightness(0.75);
+  /* Muted / monochrome by default */
+  filter: grayscale(0.55) brightness(0.7);
+  opacity: 0.65;
   transition:
     color        0.3s ease,
     border-color 0.3s ease,
     background   0.3s ease,
     transform    0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow   0.3s ease,
-    filter       0.3s ease;
+    filter       0.3s ease,
+    opacity      0.3s ease;
   cursor: default;
 }
 
-/* Shimmer sweep */
-.trust-logo::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -80%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transform: skewX(-15deg);
-  pointer-events: none;
-}
-
-/* Hover: fully visible + glow */
+/* Hover: fully visible + glow — no clipping */
 .trust-logo:hover {
-  color: rgba(237, 244, 255, 0.92);
-  background: rgba(45, 212, 191, 0.06);
-  border-color: rgba(45, 212, 191, 0.2);
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 6px 24px rgba(45, 212, 191, 0.14);
+  color: rgba(237, 244, 255, 0.95);
+  background: rgba(45, 212, 191, 0.055);
+  border-color: rgba(45, 212, 191, 0.18);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 8px 28px rgba(45, 212, 191, 0.13),
+    0 0 0 1px rgba(45, 212, 191, 0.07) inset;
   filter: grayscale(0) brightness(1);
-}
-
-.trust-logo:hover::after {
-  animation: trust-shimmer 0.6s ease forwards;
-}
-
-@keyframes trust-shimmer {
-  from { left: -80%; }
-  to   { left: 130%; }
+  opacity: 1;
 }
 
 /* SVG icon */

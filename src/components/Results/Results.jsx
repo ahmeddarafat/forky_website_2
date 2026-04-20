@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import './Results.css';
 
 const caseStudies = [
@@ -72,13 +73,16 @@ export default function Results() {
           <div>
             <p className="cs-label" data-reveal="up" style={{ animationDelay: '0ms' }}>Our Work</p>
             <h2 className="cs-title" data-reveal="up" style={{ animationDelay: '80ms' }}>
-              Real Results.<br />
-              <span className="cs-gradient-text">Real Growth.</span>
+              Proven Impact.<br />
+              <span className="cs-gradient-text">Growth in Action.</span>
             </h2>
+            <p className="cs-subtitle" data-reveal="up" style={{ animationDelay: '130ms' }}>
+              Real clients, real constraints, compounding results.
+            </p>
           </div>
-          <a href="#" className="cs-btn" data-reveal="fade" style={{ animationDelay: '160ms' }}>
+          <Link href="/work" className="cs-btn" data-reveal="fade" style={{ animationDelay: '160ms' }}>
             View All Work <ArrowRightIcon />
-          </a>
+          </Link>
         </div>
 
         {/* Cards */}

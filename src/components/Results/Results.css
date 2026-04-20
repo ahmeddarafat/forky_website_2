@@ -3,7 +3,7 @@
 .cs-section {
   position: relative;
   z-index: 1;
-  padding: 9rem 0;
+  padding: 110px 0;
   overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@
   transform: translateX(-50%);
   width: 900px;
   height: 500px;
-  background: rgba(19, 78, 74, 0.15);
+  background: rgba(19, 78, 74, 0.07);
   border-radius: 50%;
   filter: blur(160px);
   pointer-events: none;
@@ -38,7 +38,9 @@
 .cs-label {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+  width: fit-content;
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -47,7 +49,7 @@
   color: var(--cyan);
   background: var(--cyan-dim);
   border: 1px solid rgba(45, 212, 191, 0.2);
-  padding: 5px 13px;
+  padding: 6px 12px;
   border-radius: 100px;
   margin-bottom: 20px;
 }
@@ -58,17 +60,25 @@
   height: 5px;
   border-radius: 50%;
   background: var(--cyan);
-  box-shadow: 0 0 7px var(--cyan);
+  box-shadow: 0 0 5px var(--cyan);
 }
 
 .cs-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: -0.028em;
+  margin: 0 0 10px;
+}
+
+.cs-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
   margin: 0;
+  max-width: 380px;
 }
 
 .cs-gradient-text {

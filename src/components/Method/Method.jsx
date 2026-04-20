@@ -12,14 +12,19 @@ export default function Method() {
             <h2>A system built to <span className="hl">compound.</span></h2>
             <p>Four disciplined phases that move you from scattered to scalable — without disruption.</p>
           </div>
-          <a href="#results" className="btn-secondary">See Results →</a>
         </div>
 
         <div className="method-flow">
-          {methodSteps.map(({ num, emoji, title, desc }) => (
+          {methodSteps.map(({ num, iconSvg, title, desc }) => (
             <div key={num} className="method-step fade-up">
               <div className="method-dot-wrap">
-                <div className="method-dot">{emoji}</div>
+                <div className="method-dot">
+                  <span
+                    className="method-dot-icon"
+                    dangerouslySetInnerHTML={{ __html: iconSvg }}
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
               <h3 className="method-title">{title}</h3>
               <p className="method-desc">{desc}</p>

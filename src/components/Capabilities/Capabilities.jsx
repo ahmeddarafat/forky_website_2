@@ -91,22 +91,11 @@ export default function Capabilities() {
           ))}
         </nav>
 
-        {/* ── Subtitle bar — key forces re-animation on tab change ── */}
-        <div className="cap-v2-meta" key={`meta-${activeTab}`}>
-          <span className="cap-v2-meta-text">{activeData.subtitle}</span>
-          <div className="cap-v2-meta-line" />
-        </div>
-
         {/* ── Cards grid — key forces remount + re-animation on tab change ── */}
         <div className="cap-v2-grid" key={activeTab} role="tabpanel">
           {activeData.items.map(item => (
             <CapCard key={item.title} item={item} />
           ))}
-        </div>
-
-        {/* ── Footer CTA ── */}
-        <div className="cap-v2-cta fade-up">
-          <a href="#cta" className="btn-secondary">View All Capabilities →</a>
         </div>
 
       </div>

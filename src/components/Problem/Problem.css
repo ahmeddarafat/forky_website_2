@@ -2,7 +2,7 @@
 .problem {
   position: relative;
   z-index: 1;
-  padding: 104px 0;
+  padding: 110px 0;
 }
 
 /* Stack wrapper */
@@ -133,22 +133,23 @@
 }
 
 .prob-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: #EDF4FF;
-  letter-spacing: -0.018em;
-  line-height: 1.28;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   margin: 0 0 10px;
 }
 
 .prob-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  color: rgba(237, 244, 255, 0.48);
-  line-height: 1.72;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
   margin: 0;
   max-width: 560px;
+  opacity: 0.85;
 }
 
 .prob-body em {

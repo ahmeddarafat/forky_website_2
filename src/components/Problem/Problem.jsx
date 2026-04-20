@@ -10,9 +10,8 @@ export default function Problem() {
           <div className="split-header-left">
             <span className="tag">The Problem</span>
             <h2>Why most companies <span className="hl">plateau.</span></h2>
-            <p>Growth stalls — not from lack of effort, but from systems that were never built to scale together.</p>
+            <p>Scale breaks what ambition built. Disconnected tools, bloated stacks, and siloed teams create compounding drag — not growth.</p>
           </div>
-          <a href="#method" className="btn-secondary">See Our Method →</a>
         </div>
 
         <div className="prob-stack">
