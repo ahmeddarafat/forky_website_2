@@ -16,10 +16,15 @@ export default function Footer() {
             </a>
             <p className="footer-tagline">{site.tagline}</p>
             <div className="footer-social">
-              {footerSocials.map(({ label, title, href }) => (
-                <a key={title} href={href} className="social-btn" title={title} aria-label={title}>
-                  {label}
-                </a>
+              {footerSocials.map(({ iconSvg, title, href }) => (
+                <a
+                  key={title}
+                  href={href}
+                  className="social-btn"
+                  title={title}
+                  aria-label={title}
+                  dangerouslySetInnerHTML={{ __html: iconSvg }}
+                />
               ))}
             </div>
           </div>

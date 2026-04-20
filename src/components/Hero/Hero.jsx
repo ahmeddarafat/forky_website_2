@@ -1,7 +1,67 @@
+'use client';
+
+import { useEffect, useRef, useState, useCallback } from 'react';
 import './Hero.css';
 import { hero } from '../../data/index.js';
 
 const heroImg = '/hero.png';
+
+/* ── useCountUp — runs once when element enters viewport ──────── */
+function useCountUp(target, duration = 1600) {
+  const [display, setDisplay] = useState('0');
+  const ref = useRef(null);
+  const animated = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Parse numeric part + suffix (e.g. "200+" → 200, "+")
+    const match = String(target).match(/^(\d*\.?\d+)(.*)/);
+    if (!match) { setDisplay(String(target)); return; }
+
+    const end    = parseFloat(match[1]);
+    const suffix = match[2] ?? '';
+    const isFloat = match[1].includes('.');
+    const decimals = isFloat ? (match[1].split('.')[1]?.length ?? 1) : 0;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || animated.current) return;
+        animated.current = true;
+        obs.disconnect();
+
+        const startTime = performance.now();
+        const tick = (now) => {
+          const elapsed  = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const eased    = 1 - Math.pow(1 - progress, 3);
+          const current  = eased * end;
+          setDisplay((isFloat ? current.toFixed(decimals) : Math.floor(current)) + suffix);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [target, duration]);
+
+  return { ref, display };
+}
+
+/* ── Stat counter item ─────────────────────────────────────────── */
+function StatItem({ value, label }) {
+  const { ref, display } = useCountUp(value, 1500);
+  return (
+    <div className="hero-stat-item" ref={ref}>
+      <div className="hero-stat-val">{display}</div>
+      <div className="hero-stat-lbl">{label}</div>
+    </div>
+  );
+}
 
 function KnightVisual() {
   return (
@@ -33,7 +93,7 @@ export default function Hero() {
       <div className="container">
         <div className="hero-grid">
 
-          {/* Left: content (unchanged) */}
+          {/* Left: content */}
           <div>
             <div className="hero-badge">
               <span className="badge-dot" />
@@ -54,10 +114,7 @@ export default function Hero() {
 
             <div className="hero-stats">
               {hero.stats.map(({ value, label }) => (
-                <div key={label}>
-                  <div className="hero-stat-val">{value}</div>
-                  <div className="hero-stat-lbl">{label}</div>
-                </div>
+                <StatItem key={label} value={value} label={label} />
               ))}
             </div>
           </div>
@@ -72,3 +129,4 @@ export default function Hero() {
     </section>
   );
 }
+

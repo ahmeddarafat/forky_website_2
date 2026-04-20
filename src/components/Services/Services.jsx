@@ -12,7 +12,6 @@ export default function Services() {
             <h2>Three pillars. <span className="hl">One partner.</span></h2>
             <p>Forky unifies software development, performance marketing, and brand strategy under a single roof — so everything compounds.</p>
           </div>
-          <a href="#cta" className="btn-secondary">View All Services →</a>
         </div>
 
         <div className="services-cards">
@@ -20,7 +19,6 @@ export default function Services() {
             <div
               key={title}
               className="sc-card sc-card-reveal"
-              style={{ transitionDelay: delay }}
             >
               <div className="sc-card-orb" />
               <div

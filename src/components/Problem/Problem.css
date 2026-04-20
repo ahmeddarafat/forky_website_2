@@ -2,52 +2,176 @@
 .problem {
   position: relative;
   z-index: 1;
-  padding: 104px 0;
+  padding: 110px 0;
 }
 
-.problem-list { max-width: 760px; margin: 0; }
+/* Stack wrapper */
+.prob-stack {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
 
-.problem-item {
+/* ── Individual card ─────────────────────────────────────────── */
+.prob-card {
+  position: relative;
   display: grid;
   grid-template-columns: 60px 1fr;
-  gap: 26px;
-  align-items: flex-start;
-  padding: 30px 0;
-  border-bottom: 1px solid var(--border);
-  transition: var(--transition);
+  gap: 28px;
+  padding: 26px 28px 26px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: default;
+  transition:
+    background  0.32s ease,
+    box-shadow  0.32s ease,
+    transform   0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.problem-item:first-child { border-top: 1px solid var(--border); }
-.problem-item:hover { padding-left: 10px; }
+.prob-card:hover {
+  background: rgba(239, 68, 68, 0.035);
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.14),
+    0 8px 40px rgba(0, 0, 0, 0.28),
+    0 0 60px rgba(239, 68, 68, 0.05);
+  transform: translateX(5px);
+}
 
-.problem-num {
+/* ── Ghost number (large BG decoration) ──────────────────────── */
+.prob-ghost {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: rgba(239, 68, 68, 0.22);
-  letter-spacing: -0.04em;
+  font-size: 6.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.025);
+  letter-spacing: -0.06em;
   line-height: 1;
-  padding-top: 2px;
-  transition: var(--transition);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: color 0.32s ease;
 }
 
-.problem-item:hover .problem-num { color: rgba(239, 68, 68, 0.48); }
+.prob-card:hover .prob-ghost {
+  color: rgba(239, 68, 68, 0.055);
+}
 
-.problem-body h3 {
-  font-size: 1.1rem;
+/* ── Icon column ─────────────────────────────────────────────── */
+.prob-icon-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.prob-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(239, 68, 68, 0.7);
+  flex-shrink: 0;
+  transition:
+    background     0.3s ease,
+    border-color   0.3s ease,
+    color          0.3s ease,
+    transform      0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.prob-icon-wrap svg { display: block; }
+
+.prob-card:hover .prob-icon-wrap {
+  background: rgba(239, 68, 68, 0.13);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: rgba(239, 68, 68, 0.95);
+  transform: translateY(-3px) scale(1.07);
+}
+
+/* Vertical connector line between items */
+.prob-vline {
+  flex: 1;
+  width: 1px;
+  min-height: 28px;
+  margin: 8px 0 -26px;
+  background: linear-gradient(
+    to bottom,
+    rgba(239, 68, 68, 0.22) 0%,
+    rgba(239, 68, 68, 0.04) 100%
+  );
+  border-radius: 1px;
+}
+
+/* ── Content ─────────────────────────────────────────────────── */
+.prob-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 4px;
+}
+
+.prob-num {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.63rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(239, 68, 68, 0.45);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.prob-card:hover .prob-num {
+  color: rgba(239, 68, 68, 0.85);
+}
+
+.prob-title {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin: 0 0 10px;
 }
 
-.problem-body p {
-  font-size: 0.93rem;
+.prob-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.72;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 560px;
+  opacity: 0.85;
 }
 
-.problem-body em {
+.prob-body em {
   font-style: normal;
-  color: rgba(239, 68, 68, 0.75);
+  color: rgba(239, 68, 68, 0.82);
   font-weight: 600;
 }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .prob-card {
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 20px 16px 20px 0;
+  }
+
+  .prob-icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .prob-ghost { font-size: 4.5rem; }
+}
+

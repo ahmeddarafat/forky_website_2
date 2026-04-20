@@ -4,24 +4,24 @@
 
 /* ── Custom properties ─────────────────────────────────────── */
 :root {
-  --bg-base:       #040D1A;
-  --bg-surface:    #061322;
-  --bg-card:       #091628;
-  --bg-card-hover: #0C1C32;
+  --bg-base:       #0B0F14;
+  --bg-surface:    #0D1117;
+  --bg-card:       #0A0E12;
+  --bg-card-hover: #141920;
 
   --cyan:       #00D4FF;
-  --cyan-dim:   rgba(0, 212, 255, 0.12);
-  --cyan-glow:  rgba(0, 212, 255, 0.35);
+  --cyan-dim:   rgba(0, 212, 255, 0.10);
+  --cyan-glow:  rgba(0, 212, 255, 0.17);
   --green:      #00FF9D;
-  --green-dim:  rgba(0, 255, 157, 0.1);
-  --green-glow: rgba(0, 255, 157, 0.28);
+  --green-dim:  rgba(0, 255, 157, 0.08);
+  --green-glow: rgba(0, 255, 157, 0.14);
 
   --text-primary:   #EDF4FF;
   --text-secondary: #7A93B8;
   --text-muted:     #3A4F6E;
 
-  --border:       rgba(0, 212, 255, 0.1);
-  --border-hover: rgba(0, 212, 255, 0.32);
+  --border:       rgba(0, 212, 255, 0.08);
+  --border-hover: rgba(0, 212, 255, 0.28);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -29,8 +29,8 @@
   --radius-xl: 28px;
 
   --transition:  all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-glow: 0 0 28px rgba(0, 212, 255, 0.14);
-  --shadow-card: 0 4px 28px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 28px rgba(0, 212, 255, 0.07);
+  --shadow-card: 0 4px 28px rgba(0, 0, 0, 0.55);
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -80,7 +80,7 @@ body::after {
   transform: translateX(-50%);
   width: 90vw;
   height: 80vh;
-  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.055) 0%, transparent 68%);
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.027) 0%, transparent 68%);
   pointer-events: none;
   z-index: 0;
 }
@@ -96,7 +96,10 @@ body::after {
 .tag {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+  width: fit-content;
+  align-self: flex-start;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -105,7 +108,7 @@ body::after {
   color: var(--cyan);
   background: var(--cyan-dim);
   border: 1px solid rgba(0, 212, 255, 0.2);
-  padding: 5px 13px;
+  padding: 6px 12px;
   border-radius: 100px;
   margin-bottom: 20px;
 }
@@ -114,15 +117,16 @@ body::after {
   content: '';
   width: 5px;
   height: 5px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--cyan);
   box-shadow: 0 0 7px var(--cyan);
 }
 
 .section-header {
-  text-align: center;
+  text-align: left;
   max-width: 640px;
-  margin: 0 auto 60px;
+  margin: 0 0 60px;
 }
 
 .section-header h2 {
@@ -189,20 +193,20 @@ body::after {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #040D1A;
+  color: #0B0F14;
   background: linear-gradient(135deg, var(--cyan) 0%, #00A8CC 100%);
   padding: 11px 24px;
   border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 0 22px rgba(0, 212, 255, 0.28);
+  box-shadow: 0 0 22px rgba(0, 212, 255, 0.14);
   white-space: nowrap;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 38px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 38px rgba(0, 212, 255, 0.28);
 }
 
 .btn-secondary {

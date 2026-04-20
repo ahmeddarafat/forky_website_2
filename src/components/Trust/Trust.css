@@ -5,9 +5,124 @@
   padding: 36px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(6, 19, 34, 0.55);
+  background: rgba(11, 15, 20, 0.65);
   overflow: hidden;
 }
+
+.trust-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* Scroll container — vertical padding lets hover lift/glow breathe */
+.trust-wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+/* Soft gradient fades on left / right edges */
+.trust-wrap::before,
+.trust-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 160px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trust-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(2,8,11,1) 0%, transparent 100%);
+}
+.trust-wrap::after {
+  right: 0;
+  background: linear-gradient(-90deg, rgba(2,8,11,1) 0%, transparent 100%);
+}
+
+/* Track — duplicated logos for seamless loop */
+.trust-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  /* Slow, premium crawl — no jitter */
+  animation: trust-scroll 48s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover for usability */
+.trust-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes trust-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Individual logo pill — NO overflow:hidden so glow is never clipped */
+.trust-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(237, 244, 255, 0.62);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  padding: 9px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  /* Muted / monochrome by default */
+  filter: grayscale(0.55) brightness(0.7);
+  opacity: 0.65;
+  transition:
+    color        0.3s ease,
+    border-color 0.3s ease,
+    background   0.3s ease,
+    transform    0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow   0.3s ease,
+    filter       0.3s ease,
+    opacity      0.3s ease;
+  cursor: default;
+}
+
+/* Hover: fully visible + glow — no clipping */
+.trust-logo:hover {
+  color: rgba(237, 244, 255, 0.95);
+  background: rgba(45, 212, 191, 0.055);
+  border-color: rgba(45, 212, 191, 0.18);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 8px 28px rgba(45, 212, 191, 0.13),
+    0 0 0 1px rgba(45, 212, 191, 0.07) inset;
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+
+/* SVG icon */
+.trust-logo-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.trust-logo:hover .trust-logo-icon { opacity: 1; }
+
 
 .trust-label {
   font-size: 0.75rem;
