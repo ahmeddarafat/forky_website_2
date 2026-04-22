@@ -43,7 +43,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: var(--bg-base);
   color: var(--text-primary);
   line-height: 1.6;
@@ -52,7 +52,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.15;
 }
 
@@ -100,7 +100,7 @@ body::after {
   gap: 7px;
   width: fit-content;
   align-self: flex-start;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -190,7 +190,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
   color: #0B0F14;
@@ -213,7 +213,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-primary);

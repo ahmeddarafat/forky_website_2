@@ -3,52 +3,29 @@
 import { useState } from 'react';
 import Nav from '../../src/components/Nav/Nav.jsx';
 import Footer from '../../src/components/Footer/Footer.jsx';
+import { useLanguage } from '../../src/context/LanguageContext.jsx';
 import './contact.css';
 
-const PROJECT_TYPES = [
-  'UI/UX Design',
-  'Web Development',
-  'Mobile App',
-  'Branding',
-  'Digital Marketing',
-  'Full Project',
-];
-
-const TRUST_ITEMS = [
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <circle cx="10" cy="10" r="8.25" stroke="currentColor" strokeWidth="1.4"/>
-        <path d="M10 5.5v4.75l2.75 2.75" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: 'Fast Response',
-    desc:  'We reply within 24 hours — no exceptions.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <rect x="2.5" y="5.5" width="15" height="11" rx="2.5" stroke="currentColor" strokeWidth="1.4"/>
-        <path d="M2.5 9h15" stroke="currentColor" strokeWidth="1.3" strokeOpacity="0.4"/>
-        <path d="M6 13h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-        <path d="M13.5 13h0.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: 'Professional Execution',
-    desc:  'Senior-level talent on every engagement.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M3.5 5.5h13M3.5 10h9M3.5 14.5h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: 'Clear Communication',
-    desc:  'Weekly updates. No surprises. Full transparency.',
-  },
+const TRUST_ICONS = [
+  <svg key="t1" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="8.25" stroke="currentColor" strokeWidth="1.4"/>
+    <path d="M10 5.5v4.75l2.75 2.75" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+  </svg>,
+  <svg key="t2" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <rect x="2.5" y="5.5" width="15" height="11" rx="2.5" stroke="currentColor" strokeWidth="1.4"/>
+    <path d="M2.5 9h15" stroke="currentColor" strokeWidth="1.3" strokeOpacity="0.4"/>
+    <path d="M6 13h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+    <path d="M13.5 13h0.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+  </svg>,
+  <svg key="t3" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M3.5 5.5h13M3.5 10h9M3.5 14.5h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+  </svg>,
 ];
 
 export default function ContactPage() {
+  const { data } = useLanguage();
+  const t = data.contact;
+
   const [formState, setFormState] = useState({
     name:    '',
     email:   '',
@@ -89,14 +66,12 @@ export default function ContactPage() {
         <section className="contact-hero">
           <div className="container">
             <div className="contact-hero-inner">
-              <span className="tag">Contact Us</span>
-              <h1 className="contact-hero-title">
-                Let's build your next<br />
-                <span className="hl">digital product.</span>
-              </h1>
-              <p className="contact-hero-sub">
-                Tell us about your project and we'll get back within 24 hours.
-              </p>
+              <span className="tag">{t.heroTag}</span>
+              <h1
+                className="contact-hero-title"
+                dangerouslySetInnerHTML={{ __html: t.heroTitle }}
+              />
+              <p className="contact-hero-sub">{t.heroSub}</p>
             </div>
           </div>
         </section>
@@ -111,10 +86,10 @@ export default function ContactPage() {
 
                 {/* Trust items */}
                 <div className="contact-trust-list">
-                  {TRUST_ITEMS.map(({ icon, title, desc }) => (
-                    <div key={title} className="contact-trust-item">
+                  {t.trustItems.map(({ title, desc }, i) => (
+                    <div key={i} className="contact-trust-item">
                       <div className="contact-trust-icon" aria-hidden="true">
-                        {icon}
+                        {TRUST_ICONS[i]}
                       </div>
                       <div className="contact-trust-text">
                         <p className="contact-trust-title">{title}</p>
@@ -130,7 +105,7 @@ export default function ContactPage() {
                 {/* Contact info */}
                 <div className="contact-info-list">
 
-                  <a href="mailto:hello@forky.io" className="contact-info-item">
+                  <a href="mailto:forkysolutions@gmail.com" className="contact-info-item">
                     <span className="contact-info-icon" aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" strokeWidth="1.35"/>
@@ -138,8 +113,8 @@ export default function ContactPage() {
                       </svg>
                     </span>
                     <div>
-                      <p className="contact-info-label">Email</p>
-                      <p className="contact-info-value">hello@forky.io</p>
+                      <p className="contact-info-label">{t.emailLabel}</p>
+                      <p className="contact-info-value">forkysolutions@gmail.com</p>
                     </div>
                   </a>
 
@@ -151,7 +126,7 @@ export default function ContactPage() {
                       </svg>
                     </span>
                     <div>
-                      <p className="contact-info-label">WhatsApp</p>
+                      <p className="contact-info-label">{t.whatsappLabel}</p>
                       <p className="contact-info-value">+1 (000) 000-0000</p>
                     </div>
                   </a>
@@ -164,8 +139,8 @@ export default function ContactPage() {
                       </svg>
                     </span>
                     <div>
-                      <p className="contact-info-label">Location</p>
-                      <p className="contact-info-value">Remote-first · Global</p>
+                      <p className="contact-info-label">{t.locationLabel}</p>
+                      <p className="contact-info-value">{t.locationValue}</p>
                     </div>
                   </div>
 
@@ -186,8 +161,8 @@ export default function ContactPage() {
                   {!submitted ? (
                     <>
                       <div className="contact-card-header">
-                        <p className="contact-card-pretitle">Start a project</p>
-                        <h2 className="contact-card-title">Tell us about your vision</h2>
+                        <p className="contact-card-pretitle">{t.formPretitle}</p>
+                        <h2 className="contact-card-title">{t.formTitle}</h2>
                       </div>
 
                       <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -206,7 +181,7 @@ export default function ContactPage() {
                               value={formState.name}
                               onChange={handleChange}
                             />
-                            <label htmlFor="cf-name" className="contact-label">Full Name</label>
+                            <label htmlFor="cf-name" className="contact-label">{t.fullName}</label>
                             <span className="contact-field-line" aria-hidden="true" />
                           </div>
 
@@ -222,7 +197,7 @@ export default function ContactPage() {
                               value={formState.email}
                               onChange={handleChange}
                             />
-                            <label htmlFor="cf-email" className="contact-label">Email Address</label>
+                            <label htmlFor="cf-email" className="contact-label">{t.emailAddr}</label>
                             <span className="contact-field-line" aria-hidden="true" />
                           </div>
                         </div>
@@ -241,7 +216,7 @@ export default function ContactPage() {
                               onChange={handleChange}
                             />
                             <label htmlFor="cf-company" className="contact-label">
-                              Company <span className="contact-optional">(optional)</span>
+                              {t.company} <span className="contact-optional">({t.optional})</span>
                             </label>
                             <span className="contact-field-line" aria-hidden="true" />
                           </div>
@@ -256,11 +231,11 @@ export default function ContactPage() {
                               onChange={handleChange}
                             >
                               <option value="" disabled hidden></option>
-                              {PROJECT_TYPES.map(t => (
-                                <option key={t} value={t}>{t}</option>
+                              {t.projectTypes.map(pt => (
+                                <option key={pt} value={pt}>{pt}</option>
                               ))}
                             </select>
-                            <label htmlFor="cf-type" className="contact-label">Project Type</label>
+                            <label htmlFor="cf-type" className="contact-label">{t.projectType}</label>
                             <span className="contact-select-arrow" aria-hidden="true">
                               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -283,7 +258,7 @@ export default function ContactPage() {
                             onChange={handleChange}
                           />
                           <label htmlFor="cf-message" className="contact-label">
-                            Tell us about your project
+                            {t.message}
                           </label>
                           <span className="contact-field-line" aria-hidden="true" />
                         </div>
@@ -297,11 +272,11 @@ export default function ContactPage() {
                           {loading ? (
                             <>
                               <span className="contact-submit-spinner" aria-hidden="true" />
-                              <span>Sending…</span>
+                              <span>{t.sending}</span>
                             </>
                           ) : (
                             <>
-                              <span>Send Message</span>
+                              <span>{t.submit}</span>
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                               </svg>
@@ -311,7 +286,7 @@ export default function ContactPage() {
 
                         <p className="contact-form-note">
                           <span className="contact-trust-dot" aria-hidden="true" />
-                          No commitment · Free 30-min strategy call · Reply within 24h
+                          {t.note}
                         </p>
 
                       </form>
@@ -325,16 +300,14 @@ export default function ContactPage() {
                           <path d="M8.5 14.5l3.5 3.5 7.5-7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <h3 className="contact-success-title">Message sent!</h3>
-                      <p className="contact-success-desc">
-                        We've received your message and will get back to you within 24 hours.
-                      </p>
+                      <h3 className="contact-success-title">{t.successTitle}</h3>
+                      <p className="contact-success-desc">{t.successDesc}</p>
                       <button
                         type="button"
                         className="contact-success-reset"
                         onClick={() => { setSubmitted(false); setFormState({ name:'', email:'', company:'', type:'', message:'' }); }}
                       >
-                        Send another message
+                        {t.successReset}
                       </button>
                     </div>
                   )}
@@ -350,16 +323,14 @@ export default function ContactPage() {
         <section className="contact-final-cta">
           <div className="container">
             <div className="contact-final-inner">
-              <p className="contact-final-label">Prefer to talk directly?</p>
-              <h2 className="contact-final-title">
-                Start a <span className="hl">Conversation.</span>
-              </h2>
-              <p className="contact-final-sub">
-                We work with startups and businesses to build scalable digital experiences.
-                Let's find out what's right for you.
-              </p>
+              <p className="contact-final-label">{t.finalLabel}</p>
+              <h2
+                className="contact-final-title"
+                dangerouslySetInnerHTML={{ __html: t.finalTitle }}
+              />
+              <p className="contact-final-sub">{t.finalSub}</p>
               <a href="https://wa.me/10000000000" target="_blank" rel="noopener noreferrer" className="btn-primary contact-final-btn">
-                Start a Conversation
+                {t.finalBtn}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8c0 1.16.3 2.25.82 3.2L1.5 14.5l3.42-.81A6.48 6.48 0 0 0 8 14.5c3.59 0 6.5-2.91 6.5-6.5S11.59 1.5 8 1.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
                   <path d="M5.8 5.5c.1.3.35 1.02.56 1.35.14.22.14.46-.03.66l-.42.5c.44.82 1.08 1.46 1.9 1.9l.5-.42c.2-.17.44-.17.66-.03.33.21 1.05.46 1.35.56.3.1.46.42.37.72-.1.3-.54 1.26-1.6 1.26-1.06 0-2.6-1.1-3.72-2.22C4.27 8.6 3.5 7.3 3.5 6.23c0-.7.5-1.38.93-1.45.43-.07.27.62.37.72Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>

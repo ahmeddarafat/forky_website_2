@@ -6,7 +6,6 @@
 /* ── Page wrapper ────────────────────────────────────────────── */
 .wk-page {
   min-height: 100vh;
-  background-color: var(--bg-base);
   animation: wk-page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -32,13 +31,7 @@
   pointer-events: none;
 }
 
-.wk-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.12), transparent);
-}
+
 
 .wk-hero-inner {
   max-width: 680px;
@@ -48,7 +41,7 @@
 }
 
 .wk-hero-title {
-  font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 700;
   letter-spacing: -0.036em;
@@ -70,7 +63,7 @@
 .wk-grid-section {
   position: relative;
   z-index: 1;
-  padding: 0 0 120px;
+  padding: 0 0 90px;
 }
 
 /* ── Filter bar ──────────────────────────────────────────────── */
@@ -91,7 +84,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(10, 14, 18, 0.6);
   color: var(--text-secondary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.005em;
@@ -237,7 +230,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -262,7 +255,7 @@
 
 /* Title */
 .wk-card-title {
-  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -278,7 +271,7 @@
 
 /* Description */
 .wk-card-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.84rem;
   font-weight: 400;
   color: var(--text-secondary);
@@ -313,4 +306,24 @@
   .wk-grid { grid-template-columns: 1fr; gap: 16px; }
   .wk-grid-section { padding: 0 0 80px; }
   .wk-filter-btn { padding: 10px 22px; font-size: 0.86rem; }
+}
+
+/* ── Linked cards (case study clickable) ─────────────────────── */
+a.wk-card {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.wk-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow:
+    0 20px 64px rgba(0, 0, 0, 0.6),
+    0 0 56px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+a.wk-card:hover .wk-card-arrow {
+  color: var(--accent, var(--cyan));
+  transform: translateX(4px);
 }

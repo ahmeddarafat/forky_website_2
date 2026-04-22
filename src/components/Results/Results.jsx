@@ -5,9 +5,30 @@ import Link from 'next/link';
 import './Results.css';
 
 const caseStudies = [
-  { client: 'AlJassour Construction', industry: 'Construction', problem: 'Low conversion rate', strategy: 'Full-funnel rebuild + automation', result: '+230% Revenue Growth', tags: ['Funnel', 'Automation'] },
-  { client: 'MyVego', industry: 'E-Commerce', problem: 'High customer acquisition cost', strategy: 'Funnel optimization + targeting refinement', result: '-40% CAC', tags: ['Ads', 'CRO'] },
-  { client: 'HikeUp', industry: 'SaaS', problem: 'Low retention', strategy: 'Lifecycle automation system', result: '+60% Retention', tags: ['Automation', 'Email'] },
+  {
+    client: 'WSG Auto Parts',
+    industry: 'Mobile App — E-Commerce',
+    problem: 'Zero digital presence in an offline-only market',
+    strategy: 'Full mobile app with catalog, cart, and loyalty engine',
+    result: '0 → 1 Product Launch',
+    tags: ['Mobile App', 'Loyalty'],
+  },
+  {
+    client: 'AlJassour Construction',
+    industry: 'Construction',
+    problem: 'Low lead conversion from paid traffic',
+    strategy: 'Full-funnel rebuild with automated follow-up sequences',
+    result: '+230% Revenue Growth',
+    tags: ['Funnel', 'Automation'],
+  },
+  {
+    client: 'MyVego',
+    industry: 'E-Commerce',
+    problem: 'High customer acquisition cost eating into margins',
+    strategy: 'Funnel optimisation + audience targeting refinement',
+    result: '-40% CAC',
+    tags: ['Ads', 'CRO'],
+  },
 ];
 
 const cardBgs = [

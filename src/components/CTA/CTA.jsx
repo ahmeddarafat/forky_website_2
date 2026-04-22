@@ -42,7 +42,7 @@ export default function CTA() {
                 </span>
                 <div>
                   <p className="cta-info-label">Email Us</p>
-                  <p className="cta-info-value">hello@forky.io</p>
+                  <p className="cta-info-value">forkysolutions@gmail.com</p>
                 </div>
               </div>
 

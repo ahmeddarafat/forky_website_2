@@ -9,6 +9,7 @@
   min-height: 100vh;
   overflow-x: hidden;
   animation: about-page-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: opacity, transform;
 }
 
 @keyframes about-page-enter {
@@ -24,22 +25,11 @@
   z-index: 0;
   background:
     radial-gradient(ellipse 65% 50% at 10% 15%,  rgba(45, 212, 191, 0.065)  0%, transparent 60%),
-    radial-gradient(ellipse 55% 50% at 90% 80%,  rgba(14, 165, 233, 0.05)   0%, transparent 60%),
-    radial-gradient(ellipse 50% 55% at 50% 110%, rgba(16, 185, 129, 0.045)  0%, transparent 55%);
+    radial-gradient(ellipse 55% 50% at 90% 80%,  rgba(45, 212, 191, 0.05)   0%, transparent 60%),
+    radial-gradient(ellipse 50% 55% at 50% 110%, rgba(13, 148, 136, 0.045)  0%, transparent 55%);
 }
 
-.about-bg-grid {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(45, 212, 191, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 191, 0.022) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 25%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 25%, transparent 100%);
-}
+
 
 .about-beam-tl {
   position: absolute;
@@ -63,7 +53,7 @@
   background: conic-gradient(
     from 15deg at 75% 75%,
     transparent 55deg,
-    rgba(14, 165, 233, 0.024) 74deg,
+    rgba(45, 212, 191, 0.024) 74deg,
     transparent 90deg
   );
   filter: blur(56px);
@@ -82,7 +72,7 @@
 .ab-hero {
   position: relative;
   z-index: 1;
-  padding: 152px 0 96px;
+  padding: 152px 0 80px;
   overflow: hidden;
 }
 
@@ -107,7 +97,7 @@
 }
 
 .ab-hero-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(3rem, 6.5vw, 5.4rem);
   font-weight: 700;
   letter-spacing: -0.042em;
@@ -144,7 +134,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-who {
-  padding: 110px 0;
+  padding: 90px 0;
 }
 
 .ab-who-layout {
@@ -165,7 +155,7 @@
 }
 
 .ab-who-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.036em;
@@ -190,6 +180,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-top: 52px;
 }
 
 .ab-pillar-card {
@@ -249,7 +240,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-story {
-  padding: 110px 0;
+  padding: 90px 0;
   overflow: hidden;
 }
 
@@ -265,16 +256,14 @@
 /* Problem subsection */
 .ab-story-problem {
   max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .ab-story-problem .tag {
-  margin: 0 auto 28px;
+  margin: 0 0 28px;
 }
 
 .ab-story-lead {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.4rem, 2.8vw, 2rem);
   font-weight: 600;
   color: var(--text-primary);
@@ -289,11 +278,9 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 52px;
+  margin-bottom: 0;
   text-align: left;
   max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .ab-problem-item {
@@ -346,17 +333,20 @@
 }
 
 /* Approach header */
+.ab-approach {
+  padding: 90px 0;
+}
+
 .ab-approach-header {
-  text-align: center;
   margin-bottom: 52px;
 }
 
 .ab-approach-header .tag {
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
 }
 
 .ab-approach-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.9rem, 3.6vw, 2.8rem);
   font-weight: 700;
   letter-spacing: -0.034em;
@@ -406,7 +396,7 @@
 
 .ab-approach-num {
   display: block;
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -439,7 +429,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-services {
-  padding: 110px 0;
+  padding: 90px 0;
 }
 
 .ab-services-grid {
@@ -520,7 +510,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-vm {
-  padding: 110px 0;
+  padding: 90px 0;
   overflow: hidden;
 }
 
@@ -588,7 +578,7 @@
   bottom: -50px; left: -50px;
   width: 180px; height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.065) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.065) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -620,7 +610,7 @@
 }
 
 .ab-vm-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
   font-weight: 600;
   color: var(--text-primary);
@@ -640,7 +630,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-why {
-  padding: 110px 0;
+  padding: 90px 0;
 }
 
 .ab-why-grid {
@@ -703,7 +693,7 @@
 ═══════════════════════════════════════════════════════════ */
 
 .ab-cta {
-  padding: 130px 0 150px;
+  padding: 90px 0 110px;
   text-align: center;
   overflow: hidden;
 }
@@ -740,7 +730,7 @@
 }
 
 .ab-cta-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(2.4rem, 4.8vw, 4.2rem);
   font-weight: 700;
   letter-spacing: -0.042em;
@@ -788,7 +778,7 @@
 
 @media (max-width: 860px) {
   .ab-hero {
-    padding: 120px 0 72px;
+    padding: 120px 0 60px;
   }
 
   .ab-who-layout {

@@ -7,7 +7,7 @@
 export const site = {
   name:    'Forky',
   tagline: 'Software & marketing solutions for ambitious companies building the future.',
-  email:   'hello@forky.io',
+  email:   'forkysolutions@gmail.com',
   phone:   'tel:+10000000000',
   year:    2026,
 };
@@ -371,7 +371,7 @@ export const cta = {
   tag:       'Ready to Scale?',
   title:     'Turn Your Vision Into a <span class="hl">Growth Machine.</span>',
   sub:       'Strategy, software, and marketing — unified under one team. Built to scale, measured in real results.',
-  primary:   { label: 'Start My Project →', href: 'mailto:hello@forky.io' },
+  primary:   { label: 'Start My Project →', href: 'mailto:forkysolutions@gmail.com' },
   secondary: { label: 'Or talk to an expert first', href: 'tel:+10000000000' },
 };
 
@@ -379,22 +379,22 @@ export const cta = {
 export const footerSocials = [
   {
     title: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/forky-solutions-a3769a391?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><circle cx="5" cy="5.25" r="0.75" fill="currentColor"/><line x1="5" y1="7" x2="5" y2="11.75" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7.75 11.75V9.25c0-1.25.7-2.25 1.75-2.25s1.75 1 1.75 2.25v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.75" y1="7" x2="7.75" y2="11.75" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>`,
   },
   {
     title: 'X / Twitter',
-    href: '#',
+    href: 'https://x.com/forkysolutions?s=21',
     iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.12 6.9 13.36 2H12.1L8.56 6.16 5.7 2H2L6.45 8.55 2 14H3.27L7.09 9.54 10.3 14H14L9.12 6.9zm-1.44 1.95-.56-.8L3.24 3.15h1.92l3.52 5.04.55.79 4.57 6.54H11.8L7.68 8.85z" fill="currentColor"/></svg>`,
   },
   {
     title: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/forky_solutions?igsh=MWJjM28zbzFzMWtuaA%3D%3D&utm_source=qr',
     iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2.6" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="4.5" r="0.7" fill="currentColor"/></svg>`,
   },
   {
     title: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/share/1CXbL2q8zu/?mibextid=wwXIfr',
     iconSvg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.3"/><path d="M9.25 5.5H7.9C7.4 5.5 7 5.9 7 6.4v1.35H5.75V9.25H7V14H9V9.25h1.5L10.75 7.75H9V6.5c0-.28.22-.5.5-.5h1.25V5.5H9.25z" fill="currentColor"/></svg>`,
   },
 ];
@@ -423,7 +423,7 @@ export const footerCols = [
   {
     title: 'Contact',
     links: [
-      { label: 'hello@forky.io',   href: 'mailto:hello@forky.io' },
+      { label: 'forkysolutions@gmail.com', href: 'mailto:forkysolutions@gmail.com' },
       { label: 'Schedule a Call',  href: '#' },
       { label: 'Support Center',   href: '#' },
       { label: 'Privacy Policy',   href: '#' },

@@ -1,0 +1,11 @@
+Place the following WSG screenshot files in this directory:
+
+  screen-home.png           → Home screen (points card + offers + categories)
+  screen-categories.png     → Main categories list
+  screen-products.png       → Product listing with brand filters
+  screen-product-detail.png → Product detail page (specs table)
+  screen-subcategories.png  → Sub-categories list (Tyres and related)
+  screen-loyalty.png        → Loyalty / points dashboard
+  screen-upgrade.png        → Upgrade Your Rank page
+
+Recommended: export screenshots at 390×844 px (iPhone 13 scale) or higher.
