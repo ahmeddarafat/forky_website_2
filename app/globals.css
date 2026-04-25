@@ -32,7 +32,13 @@
   --radius-lg: 20px;
   --radius-xl: 28px;
 
-  --transition:  all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:  color 0.3s cubic-bezier(0.4,0,0.2,1),
+                 background 0.3s cubic-bezier(0.4,0,0.2,1),
+                 border-color 0.3s cubic-bezier(0.4,0,0.2,1),
+                 box-shadow 0.3s cubic-bezier(0.4,0,0.2,1),
+                 transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                 opacity 0.3s cubic-bezier(0.4,0,0.2,1),
+                 filter 0.3s cubic-bezier(0.4,0,0.2,1);
   --shadow-glow: 0 0 28px rgba(20, 184, 166, 0.2);
   --shadow-card: 0 4px 28px rgba(0, 0, 0, 0.55);
 }
@@ -47,7 +53,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #0B0F14;
   color: var(--text-primary);
   font-size: 1rem;
@@ -58,7 +64,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
@@ -86,59 +92,7 @@ body::before {
   z-index: 0;
 }
 
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 70% 50% at 5%  0%,   rgba(13, 148, 136, 0.065) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 95% 85%,  rgba(13, 148, 136, 0.045) 0%, transparent 55%);
-  pointer-events: none;
-  z-index: 0;
-}
 
-/* ── Ambient orbs ────────────────────────────────────────────── */
-.bg-orb-teal {
-  position: fixed;
-  top: -20%;
-  left: -10%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.06), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  animation: orb-drift 18s ease-in-out infinite alternate;
-}
-
-.bg-orb-dark {
-  position: fixed;
-  bottom: -20%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(20, 80, 70, 0.05), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  animation: orb-drift 22s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes orb-drift {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(40px, 30px) scale(1.08); }
-}
-
-/* ── Noise texture overlay ───────────────────────────────────── */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  pointer-events: none;
-  z-index: 9000;
-  opacity: 0.6;
-}
 
 /* ── Section glow divider ────────────────────────────────────── */
 .section-blur-divider {
@@ -161,7 +115,7 @@ body::after {
   gap: 7px;
   width: fit-content;
   align-self: flex-start;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -259,7 +213,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -301,7 +255,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.92rem;
   font-weight: 500;
   letter-spacing: 0.01em;

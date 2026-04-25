@@ -10,7 +10,7 @@
 }
 
 .trust-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   color: rgba(237, 244, 255, 0.62);
@@ -172,7 +172,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;

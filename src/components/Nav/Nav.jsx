@@ -12,7 +12,7 @@ const logoImg = '/logo_with_word.png';
 const NAV_ITEMS = [
   { label: 'About Us',   href: '/about'            },
   { label: 'Services',   sectionId: 'capabilities' },
-  { label: 'Our Work',   sectionId: 'results'      },
+  { label: 'Work',        href: '/work'              },
   { label: 'Contact Us', href: '/contact'           },
 ];
 
@@ -32,9 +32,19 @@ export default function Nav() {
 
   /* ── Navbar scroll style ─────────────────────────────────── */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    let rafId = null;
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 40);
+        rafId = null;
+      });
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   /* ── Active section tracking (home only) ─────────────────── */
@@ -110,15 +120,10 @@ export default function Nav() {
             <li key={item.label}>
               <Link
                 href={getHref(item)}
-                className={`nav-link${isActive(item) ? ' active' : ''}${item.href ? ' nav-link--page' : ''}`}
+                className={`nav-link${isActive(item) ? ' active' : ''}`}
                 onClick={(e) => handleClick(e, item)}
               >
                 {item.label}
-                {item.href && (
-                  <svg className="nav-link-ext" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                    <path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                )}
               </Link>
             </li>
           ))}

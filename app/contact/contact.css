@@ -23,8 +23,8 @@
   z-index: 0;
   background:
     radial-gradient(ellipse 70% 55% at 20% 30%,  rgba(45, 212, 191, 0.06)  0%, transparent 65%),
-    radial-gradient(ellipse 55% 55% at 80% 70%,  rgba(14, 165, 233, 0.055) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 60% at 50% 105%, rgba(16, 185, 129, 0.05)  0%, transparent 60%);
+    radial-gradient(ellipse 55% 55% at 80% 70%,  rgba(45, 212, 191, 0.055) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 60% at 50% 105%, rgba(13, 148, 136, 0.05)  0%, transparent 60%);
 }
 
 /* ── Background: tech grid ──────────────────────────────────── */
@@ -70,7 +70,7 @@
   background: conic-gradient(
     from 355deg at 65% 40%,
     transparent 55deg,
-    rgba(14, 165, 233, 0.026) 76deg,
+    rgba(45, 212, 191, 0.026) 76deg,
     transparent 94deg
   );
   filter: blur(56px);
@@ -83,7 +83,7 @@
 .contact-hero {
   position: relative;
   z-index: 1;
-  padding: 148px 0 72px;
+  padding: 148px 0 90px;
   text-align: center;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .contact-hero-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(2.8rem, 5.5vw, 4.8rem);
   font-weight: 700;
   letter-spacing: -0.042em;
@@ -123,7 +123,7 @@
 .contact-body {
   position: relative;
   z-index: 1;
-  padding: 0 0 120px;
+  padding: 0 0 90px;
 }
 
 .contact-layout {
@@ -358,7 +358,7 @@ a.contact-info-item:hover .contact-info-icon {
 }
 
 .contact-card-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.65rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -396,7 +396,7 @@ a.contact-info-item:hover .contact-info-icon {
   border-radius: var(--radius-sm);
   padding: 20px 16px 7px;
   font-size: 0.875rem;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--text-primary);
   outline: none;
   transition:
@@ -539,7 +539,7 @@ a.contact-info-item:hover .contact-info-icon {
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.93rem;
   font-weight: 600;
   letter-spacing: 0.025em;
@@ -654,7 +654,7 @@ a.contact-info-item:hover .contact-info-icon {
 }
 
 .contact-success-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: -0.028em;
@@ -674,7 +674,7 @@ a.contact-info-item:hover .contact-info-icon {
   border: none;
   color: var(--cyan);
   font-size: 0.82rem;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   cursor: pointer;
   opacity: 0.75;
   transition: opacity 0.2s ease;
@@ -693,7 +693,7 @@ a.contact-info-item:hover .contact-info-icon {
 .contact-final-cta {
   position: relative;
   z-index: 1;
-  padding: 110px 0 140px;
+  padding: 90px 0 110px;
   text-align: center;
   overflow: hidden;
 }
@@ -717,7 +717,7 @@ a.contact-info-item:hover .contact-info-icon {
 }
 
 .contact-final-title {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 700;
   letter-spacing: -0.04em;

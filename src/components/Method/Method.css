@@ -2,8 +2,8 @@
 .method {
   position: relative;
   z-index: 1;
-  padding: 110px 0;
-  background: linear-gradient(180deg, transparent, rgba(45,212,191,0.009) 50%, transparent);
+  padding: 90px 0;
+  background: linear-gradient(180deg, transparent, rgba(45, 212, 191,0.009) 50%, transparent);
 }
 
 .method-flow {
@@ -65,7 +65,7 @@
 .method-dot {
   width: 70px; height: 70px;
   border-radius: 50%;
-  background: rgba(10, 36, 34, 0.8);
+  background: #0a2422;
   border: 1px solid rgba(45, 212, 191, 0.16);
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@
 .method-step-num { display: none; }
 
 .method-title {
-  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-primary);
@@ -110,7 +110,7 @@
 }
 
 .method-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.78;

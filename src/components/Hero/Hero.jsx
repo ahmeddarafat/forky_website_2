@@ -74,6 +74,7 @@ function KnightVisual() {
           src={heroImg}
           alt="Forky chess knight"
           className="knight-img"
+          fetchpriority="high"
           draggable={false}
         />
       </div>

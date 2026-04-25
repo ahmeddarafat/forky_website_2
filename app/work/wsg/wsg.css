@@ -1,0 +1,514 @@
+/* ══════════════════════════════════════════════════════════════
+   WSG AUTO PARTS — Case Study
+   app/work/wsg/wsg.css
+   Brand: #7B1035  |  Accent: #e87da0
+══════════════════════════════════════════════════════════════ */
+
+/* ── Page wrapper ────────────────────────────────────────────── */
+.wsg-page {
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  animation: wsg-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes wsg-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Back link ───────────────────────────────────────────────── */
+.wsg-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 140px 0 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.22s ease;
+  text-decoration: none;
+}
+
+.wsg-back:hover { color: var(--text-primary); }
+
+/* ── Phone frame ──────────────────────────────────────────────── */
+.wsg-phone {
+  position: relative;
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.10);
+  background: linear-gradient(160deg, #3d0020 0%, #7b1035 100%);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 30px 80px rgba(0, 0, 0, 0.65),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.wsg-phone-inner {
+  aspect-ratio: 390 / 844;
+  overflow: hidden;
+  background: linear-gradient(160deg, #3d0020 0%, #7b1035 100%);
+}
+
+.wsg-phone-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wsg-phone--main   { width: 280px; }
+.wsg-phone--side   { width: 220px; }
+.wsg-phone--md     { width: 255px; }
+.wsg-phone--lg     { width: 300px; }
+.wsg-phone--loyalty{ width: 240px; }
+
+/* ── Banner ───────────────────────────────────────────────────── */
+.wsg-banner {
+  position: relative;
+  padding: 60px 0 64px;
+  overflow: hidden;
+}
+
+.wsg-banner-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 90% at 5% 50%,  rgba(123, 16, 53, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 60% at 95% 20%,  rgba(123, 16, 53, 0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.wsg-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 16, 53, 0.45), transparent);
+}
+
+.wsg-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.wsg-banner-inner  { max-width: 860px; }
+
+.wsg-banner-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.wsg-banner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wsg-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(232, 125, 160, 0.35);
+  background: rgba(123, 16, 53, 0.14);
+  color: #e87da0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.wsg-banner-year {
+  margin-left: auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.wsg-banner-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.05;
+  margin: 0 0 16px;
+}
+
+.wsg-banner-tagline {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 0 40px;
+  max-width: 560px;
+}
+
+.wsg-banner-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+
+.wsg-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wsg-meta-item span {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.wsg-meta-item strong {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── 3-Phone Hero ────────────────────────────────────────────── */
+.wsg-phones-hero {
+  padding: 40px 0 80px;
+  overflow: hidden;
+}
+
+.wsg-phones-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 24px;
+}
+
+.wsg-phone--left {
+  transform: rotate(-3deg) translateY(24px);
+  opacity: 0.78;
+}
+
+.wsg-phone--right {
+  transform: rotate(3deg) translateY(24px);
+  opacity: 0.78;
+}
+
+/* ── Shared text styles ──────────────────────────────────────── */
+.wsg-section-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #e87da0;
+  margin: 0 0 12px;
+  display: block;
+}
+
+.wsg-section-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(1.65rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.wsg-body-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.82;
+  margin: 0;
+}
+
+.wsg-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.07), transparent);
+  margin: 32px 0;
+}
+
+.wsg-center { text-align: center; }
+
+.wsg-visual-caption {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ── Overview section ───────────────────────────────────────── */
+.wsg-overview {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.wsg-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.wsg-visual-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── UI Breakdown header ────────────────────────────────────── */
+.wsg-breakdown-header {
+  padding: 80px 0 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  text-align: center;
+}
+
+.wsg-breakdown-sub {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.78;
+}
+
+/* ── Feature rows ───────────────────────────────────────────── */
+.wsg-features {
+  padding: 0 0 80px;
+}
+
+.wsg-feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.wsg-feature-row:last-child { border-bottom: none; }
+
+.wsg-feature-row--reverse .wsg-feature-phone { order: 2; }
+.wsg-feature-row--reverse .wsg-feature-text  { order: 1; }
+
+.wsg-feature-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wsg-feature-num {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: rgba(123, 16, 53, 0.22);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+
+.wsg-feature-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.wsg-feature-body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.82;
+  margin: 0 0 22px;
+}
+
+.wsg-feature-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* ── Loyalty section ────────────────────────────────────────── */
+.wsg-loyalty-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, transparent, rgba(123, 16, 53, 0.055), transparent);
+  border-top:    1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.wsg-loyalty-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.wsg-loyalty-phones {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+}
+
+.wsg-loyalty-phone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wsg-loyalty-phone-wrap--offset {
+  transform: translateY(32px);
+}
+
+.wsg-loyalty-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.wsg-loyalty-list li {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  padding-left: 20px;
+  position: relative;
+}
+
+.wsg-loyalty-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e87da0;
+}
+
+/* ── Results band ───────────────────────────────────────────── */
+.wsg-results {
+  padding: 80px 0 100px;
+}
+
+.wsg-results-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.wsg-results-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.wsg-results-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.wsg-result-item {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(123, 16, 53, 0.22);
+  background: rgba(123, 16, 53, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wsg-result-value {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e87da0;
+  letter-spacing: -0.03em;
+}
+
+.wsg-result-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .wsg-two-col,
+  .wsg-feature-row,
+  .wsg-loyalty-inner,
+  .wsg-results-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .wsg-feature-row--reverse .wsg-feature-phone { order: 0; }
+  .wsg-feature-row--reverse .wsg-feature-text  { order: 0; }
+
+  .wsg-phones-row { gap: 14px; }
+  .wsg-phone--main   { width: 220px; }
+  .wsg-phone--side   { width: 168px; }
+  .wsg-phone--md     { width: 230px; }
+  .wsg-phone--lg     { width: 230px; }
+  .wsg-phone--loyalty{ width: 185px; }
+
+  .wsg-visual-block  { align-items: flex-start; }
+  .wsg-loyalty-phone-wrap--offset { transform: translateY(20px); }
+}
+
+@media (max-width: 640px) {
+  .wsg-back          { padding-top: 110px; }
+  .wsg-banner        { padding: 20px 0 44px; }
+  .wsg-phones-hero   { padding: 30px 0 60px; }
+  .wsg-overview      { padding: 60px 0; }
+  .wsg-breakdown-header { padding: 60px 0 36px; }
+  .wsg-features      { padding: 0 0 60px; }
+  .wsg-feature-row   { padding: 48px 0; gap: 32px; }
+  .wsg-loyalty-section { padding: 60px 0; }
+  .wsg-results       { padding: 60px 0 80px; }
+  .wsg-results-stats { grid-template-columns: 1fr 1fr; }
+
+  .wsg-phone--side   { display: none; }
+  .wsg-phone--main   { width: 260px; }
+  .wsg-banner-meta   { gap: 20px; }
+  .wsg-banner-year   { display: none; }
+}

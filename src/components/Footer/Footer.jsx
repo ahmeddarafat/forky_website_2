@@ -1,9 +1,15 @@
+'use client';
+
 import './Footer.css';
-import { site, footerSocials, footerCols } from '../../data/index.js';
+import { site, footerSocials } from '../../data/index.js';
+import { useLanguage } from '../../context/LanguageContext.jsx';
 
 const logoImg = '/logo.png';
 
 export default function Footer() {
+  const { data } = useLanguage();
+  const t = data.footer;
+
   return (
     <footer className="footer">
       <div className="container">
@@ -14,7 +20,7 @@ export default function Footer() {
             <a href="#" className="footer-logo">
               <img src={logoImg} alt={site.name} className="footer-logo-img" />
             </a>
-            <p className="footer-tagline">{site.tagline}</p>
+            <p className="footer-tagline">{t.tagline}</p>
             <div className="footer-social">
               {footerSocials.map(({ iconSvg, title, href }) => (
                 <a
@@ -30,7 +36,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          {footerCols.map(({ title, links }) => (
+          {t.cols.map(({ title, links }) => (
             <div key={title}>
               <h4 className="footer-col-title">{title}</h4>
               <ul className="footer-links">
@@ -43,10 +49,10 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p className="footer-copy">© {site.year} {site.name}. All rights reserved.</p>
+          <p className="footer-copy">© {site.year} {site.name}. {t.allRights}</p>
           <div className="footer-status">
             <span className="status-dot" />
-            All systems operational
+            {t.allSystems}
           </div>
         </div>
 
